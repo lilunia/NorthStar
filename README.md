@@ -18,3 +18,17 @@ This shop was created with Vite+React.
   <p align="center">
   <!-- <img src="./src/img/memory-game.PNG" width= "70%" height= "70%" alt="Main app screenshot"> -->
   </p>
+
+## Installation
+
+To run this project, you must have the following dependencies installed:
+
+- Git (https://git-scm.com)
+
+```bash
+
+git clone https://github.com/lilunia/NorthStar.git
+npm install
+npm run dev
+
+```
