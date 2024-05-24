@@ -1,0 +1,10 @@
+body {
+	--font-size-default: 16px;
+	--font-family-default: Lato, Arial, sans-serif;
+
+	--color-text-default: #1d1d1d;
+	--color-text-grey: #555555;
+	--color-theme-primary: #024e82;
+	--color-white: #ffffff;
+	--color-grey: #fbfbfb;
+}
