@@ -1,0 +1,26 @@
+.product {
+	position: relative;
+    margin: 0 1rem 2rem;
+}
+.product img {
+	width: 300px;
+	height: 350px;
+}
+.product h4 {
+	font-weight: 700;
+	margin: 1rem 0;
+}
+.product p {
+	color: var(--color-theme-primary);
+}
+.heart {
+	position: absolute;
+	top: 0.5rem;
+	left: 0.5rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	background-image: url('../../assets/heart.svg');
+}
+.heart:hover{
+    background-image: url('../../assets/heart-full.svg');
+}

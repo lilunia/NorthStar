@@ -1,0 +1,29 @@
+.hero {
+	position: relative;
+	width: 100%;
+	height: 40rem;
+	background-size: cover;
+	background-position: center;
+}
+.heroShadow {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.25);
+}
+.contentWrapper {
+	position: absolute;
+	top: 12rem;
+	right: 6rem;
+	padding: 1rem;
+	text-align: center;
+	display: inline-block;
+}
+.heroShadow h2 {
+	margin-bottom: 2rem;
+	text-align: center;
+	font-weight: 700;
+	line-height: 3rem;
+	text-transform: uppercase;
+	text-shadow: 0px 0.5rem 0.5rem rgba(0, 0, 0, 0.25);
+	color: var(--color-white);
+}

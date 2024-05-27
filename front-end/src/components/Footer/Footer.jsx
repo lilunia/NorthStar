@@ -3,20 +3,21 @@ import img_masterCard from '../../icons/mastercard.jpg'
 import img_payPal from '../../icons/payPal.jpg'
 import img_visa from '../../icons/visa.jpg'
 import img_visaElectron from '../../icons/visaElectron.jpg'
+import ARROW from '../../assets/arrow.svg'
 
 export function Footer() {
 	return (
 		<div className={styles.footer}>
 			<div className={styles.footerMainInfo}>
 				<div className={styles.footerColumn}>
-					<h3>Company info</h3>
+					<h5>Company info</h5>
 					<p>About Us</p>
 					<p>Latest Posts</p>
 					<p>Contact Us</p>
 					<p>Shop</p>
 				</div>
 				<div className={styles.footerColumn}>
-					<h3>Help links</h3>
+					<h5>Help links</h5>
 					<p>Tracking</p>
 					<p>Order Status</p>
 					<p>Delivery</p>
@@ -24,21 +25,28 @@ export function Footer() {
 					<p>FAQ</p>
 				</div>
 				<div className={styles.footerColumn}>
-					<h3>Useful links</h3>
+					<h5>Useful links</h5>
 					<p>Special Offers</p>
 					<p>Gift Cards</p>
 					<p>Advetising</p>
 					<p>Terms of Use</p>
 				</div>
 				<div className={styles.footerColumn}>
-					<h3>Get in the know</h3>
-					<input className={styles.footerInput} type='text' placeholder='Enter email' />
+					<h5>Get in the know</h5>
+					<div>
+						<input
+							className={styles.footerInput}
+							type='text'
+							placeholder='Enter email'
+						/>
+						<img src={ARROW} alt='' />
+					</div>
 				</div>
 			</div>
 			<hr />
 			<div className={styles.footerAddInfo}>
 				<div className={styles.footerPolicy}>
-					<p>© 2020 NorthStar eCommerce</p>
+					<p>© 2024 NorthStar eCommerce</p>
 					<p>Privacy Policy Terms & Conditions</p>
 				</div>
 				<div className={styles.footerCards}>
