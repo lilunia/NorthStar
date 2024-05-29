@@ -1,10 +1,14 @@
 .genderMenu {
+	position: absolute;
+	top: 82px;
+	right: 0;
 	width: 100%;
 	background-color: var(--color-theme-primary);
+	z-index: 1;
 }
 .genderMenu ul {
 	display: flex;
-    justify-content: start;
+	justify-content: center;
 	gap: 1rem;
 	margin: 0 auto;
 	padding: 1rem;
@@ -14,6 +18,9 @@
 .genderMenu ul li a {
 	color: var(--color-white);
 }
-.genderMenu ul li a:active(.global){
-    text-decoration: underline;
+.genderMenu ul li a:hover {
+	font-weight: bold;
+}
+.genderMenu ul li a:active(.global) {
+	text-decoration: underline;
 }

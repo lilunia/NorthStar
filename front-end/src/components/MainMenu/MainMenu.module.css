@@ -9,8 +9,10 @@
 	text-transform: uppercase;
 	color: var(--color-text-default);
 	padding: 1rem 0;
+	text-align: center;
 	display: block;
 	font-weight: 700;
+	width: 6rem;
 }
 .mainMenu li a:hover {
 	color: var(--color-theme-primary);
