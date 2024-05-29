@@ -1,7 +1,7 @@
 .mainMenu {
 	display: flex;
 	align-items: center;
-	justify-content: flex-start;
+	justify-content: space-around;
 	gap: 1rem;
 	padding: 1rem;
 }
@@ -11,6 +11,9 @@
 	padding: 1rem 0;
 	display: block;
 	font-weight: 700;
+}
+.mainMenu li a:hover {
+	color: var(--color-theme-primary);
 }
 .mainMenu a:global(.active) {
 	color: var(--color-text-primary);

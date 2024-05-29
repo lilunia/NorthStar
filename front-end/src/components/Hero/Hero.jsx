@@ -9,7 +9,7 @@ export function Hero({ heroImage }) {
 				<CenteredContent>
 					<div className={styles.contentWrapper}>
 						<h2>Stylist picks beat the heat</h2>
-						<Button>Shop now</Button>
+						<Button makeWhite={true}>Shop now</Button>
 					</div>
 				</CenteredContent>
 			</div>

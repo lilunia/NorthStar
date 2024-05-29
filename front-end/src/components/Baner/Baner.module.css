@@ -1,15 +1,16 @@
 .baner {
 	display: flex;
 	justify-content: center;
-	align-items: start;
+	align-items: center;
 	flex-wrap: wrap;
-	margin: 5rem 0;
+	margin: 4rem 0;
 }
 .banerColumn {
 	display: flex;
 	justify-content: center;
 	align-items: start;
-	/* width: 25%; */
+	margin: 0 2rem;
+	width: 20rem;
 }
 .banerText {
 	display: flex;
