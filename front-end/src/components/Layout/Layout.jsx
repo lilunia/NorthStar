@@ -10,11 +10,14 @@ import { useState } from 'react'
 import { MenuBar } from '../MenuBar/MenuBar'
 import { useMediaQuery } from 'react-responsive'
 import { MenuList } from '../MenuList/MenuList'
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 
 export function Layout({ children }) {
 	const [isShopHovering, setIsShopHovering] = useState(false)
 	const [isMenuShowed, setIsMenuShowed] = useState(false)
 	const isMobileOrTablet = useMediaQuery({ maxWidth: 768 })
+
+	isMenuShowed ? disableBodyScroll(document) : enableBodyScroll(document)
 
 	return (
 		<>
@@ -36,7 +39,7 @@ export function Layout({ children }) {
 						{isMobileOrTablet ? <MenuBar setIsMenuShowed={setIsMenuShowed} /> : ''}
 					</div>
 				</TopBar>
-				{isMenuShowed ? <MenuList /> : ''}
+				{isMenuShowed ? <MenuList setIsMenuShowed={setIsMenuShowed} /> : ''}
 				{isShopHovering ? <GenderMenu setIsShopHovering={setIsShopHovering} /> : ''}
 				{children}
 			</MainContent>

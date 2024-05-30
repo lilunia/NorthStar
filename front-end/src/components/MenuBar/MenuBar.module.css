@@ -1,10 +1,10 @@
 .menuBar {
-	padding: 0.5rem;
+	padding: .5rem;
 	cursor: pointer;
 }
 
 @media (min-width: 576px) {
 	.menuBar {
-		margin-left: 2rem;
+		/* margin-left: 2rem; */
 	}
 }

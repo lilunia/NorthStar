@@ -27,12 +27,20 @@
 	font-size: 2rem;
 	padding: 3rem;
 }
+.menuList li a {
+
+	transition: padding 0.3s;
+}
+.menuList li a:hover {
+	padding-left: 3.5rem;
+	color: var(--color-theme-primary);
+}
 
 @keyframes showMenuMobile {
 	from {
 		left: -46rem;
 	}
 	to {
-		let: 0;
+		left: 0;
 	}
 }

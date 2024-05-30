@@ -3,12 +3,13 @@ import './styles/globals.css'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { Home } from './views/Home/Home.jsx'
+import { Favourites } from './views/Favourites/Favourites.jsx'
+
 
 const router = createBrowserRouter([
 	{
 		path: '/',
-		element: <Home />,
+		element: <Favourites/>,
 	},
 ])
 

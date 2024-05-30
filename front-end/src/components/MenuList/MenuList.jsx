@@ -1,9 +1,11 @@
 import styles from './MenuList.module.css'
 import { NavLink } from 'react-router-dom'
 import { CATEGORIES } from '../../constants/categories'
-export function MenuList() {
+export function MenuList({ setIsMenuShowed }) {
 	return (
-		<div className={styles.menuBackground}>
+		<div className={styles.menuBackground} onClick={()=>{
+			setIsMenuShowed(prev => !prev)
+		}}>
 			<ul className={styles.menuList}>
 				{CATEGORIES.map(category => {
 					return (

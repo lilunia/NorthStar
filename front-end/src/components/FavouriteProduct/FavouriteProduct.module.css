@@ -1,0 +1,46 @@
+td {
+	width: 15rem;
+	height: 5rem;
+}
+.favouriteProduct,
+.addFavourite,
+.manageFavourite,
+.photo,
+.price,
+.quantity,
+.totalPrice {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.manageFavourite {
+	justify-content: space-around;
+}
+.addFavourite,
+.price {
+	margin-bottom: 0;
+}
+.addFavourite,
+.removeProduct {
+	cursor: pointer;
+	transition: transform 0.3s;
+}
+.addFavourite:hover {
+	transform: scale(1.2);
+}
+.removeProduct:hover {
+	transform: scale(1.4);
+}
+.bag {
+	margin-right: 1rem;
+}
+
+.photo h5 {
+	margin: 0;
+	text-align: center;
+}
+.quantity input {
+	width: 30%;
+	padding: 1em;
+	text-align: center;
+}

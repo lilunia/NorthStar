@@ -47,18 +47,20 @@ export function Footer() {
 				</div>
 			</CenteredContent>
 			<hr />
-			<div className={styles.footerAddInfo}>
-				<div className={styles.footerPolicy}>
-					<p>© 2024 NorthStar eCommerce</p>
-					<p>Privacy Policy Terms & Conditions</p>
+			<CenteredContent>
+				<div className={styles.footerAddInfo}>
+					<div className={styles.footerPolicy}>
+						<p>© 2024 NorthStar eCommerce</p>
+						<p>Privacy Policy Terms & Conditions</p>
+					</div>
+					<div className={styles.footerCards}>
+						<img src={img_masterCard} />
+						<img src={img_visa} />
+						<img src={img_visaElectron} />
+						<img src={img_payPal} />
+					</div>
 				</div>
-				<div className={styles.footerCards}>
-					<img src={img_masterCard} />
-					<img src={img_visa} />
-					<img src={img_visaElectron} />
-					<img src={img_payPal} />
-				</div>
-			</div>
+			</CenteredContent>
 		</div>
 	)
 }

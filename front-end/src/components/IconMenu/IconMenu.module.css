@@ -25,5 +25,7 @@
 @media (min-width: 576px) {
 	.iconMenu {
 		gap: 1rem;
+		padding: 1rem;
+		padding-right: 2rem;
 	}
 }
