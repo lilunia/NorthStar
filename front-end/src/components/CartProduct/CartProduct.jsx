@@ -1,8 +1,8 @@
-import styles from './FavouriteProduct.module.css'
+import styles from './CartProduct.module.css'
 import REMOVE from '../../assets/remove.svg'
-import BAG from '../../assets/shopping-bag.svg'
 import { useState } from 'react'
-export function FavouriteProduct({ product }) {
+
+export function CartProduct({ product }) {
 	const [quantity, setQuantity] = useState(1)
 	return (
 		<tr className={styles.favouriteProduct}>
@@ -29,10 +29,6 @@ export function FavouriteProduct({ product }) {
 				<p>${product.priceUSD}</p>
 			</td>
 			<td className={styles.manageFavourite}>
-				<p className={styles.addFavourite}>
-					<img className={styles.bag} src={BAG} alt='' />
-					<p>Add to cart</p>
-				</p>
 				<img className={styles.removeProduct} src={REMOVE} />
 			</td>
 		</tr>

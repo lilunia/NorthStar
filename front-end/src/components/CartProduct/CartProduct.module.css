@@ -3,29 +3,31 @@ td {
 	padding: 1em;
 	width: 100%;
 }
+.photo {
+	width: 200%;
+}
 .favouriteProduct,
 .manageFavourite,
 .photo,
 .price,
 .quantity,
-.totalPrice,
-.addFavourite {
+.totalPrice {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+.manageFavourite {
+	justify-content: end;
 }
 .favouriteProduct {
 	padding: 1em 0;
 	border: 0.0625rem solid var(--color-dark-grey);
 }
-.addFavourite,
 .removeProduct {
 	cursor: pointer;
 	transition: transform 0.3s;
 }
-.addFavourite:hover {
-	transform: scale(1.2);
-}
+
 .removeProduct:hover {
 	transform: scale(1.4);
 }
@@ -48,25 +50,19 @@ td {
 .favouriteProduct {
 	flex-wrap: wrap;
 }
-.addFavourite,
-.addFavourite p,
 .price p,
 .photo h5 {
 	margin: 0;
 }
 
 @media (min-width: 768px) {
-	.favouriteProduct,
-	.manageFavourite,
-	.photo,
-	.price,
-	.quantity,
-	.totalPrice {
+	.photo {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		justify-content: start;
 	}
-
+	.photo img {
+		margin-right: 2rem;
+	}
 	.favouriteProduct {
 		flex-wrap: nowrap;
 		border: 0;

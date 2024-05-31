@@ -8,6 +8,9 @@
 .favouriteProducts {
 	width: 100%;
 }
+.productName{
+	width: 200%;
+}
 tr {
 	display: none;
 }
@@ -34,6 +37,6 @@ th {
 }
 @media (min-width: 1200px) {
 	.favouriteList {
-		margin: 5rem;
+		margin: 5rem 10rem;
 	}
 }

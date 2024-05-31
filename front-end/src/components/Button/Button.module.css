@@ -25,3 +25,6 @@
 	color: var(--color-white);
 	background-color: var(--color-theme-primary);
 }
+.fullWidth{
+	width: 100%;
+}
