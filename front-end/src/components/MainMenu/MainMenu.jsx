@@ -2,10 +2,8 @@ import { CATEGORIES } from '../../constants/categories'
 import styles from './MainMenu.module.css'
 import { NavLink } from 'react-router-dom'
 
-export function MainMenu({ isShopHovering, setIsShopHovering }) {
+export function MainMenu({setIsShopHovering }) {
 	const handleMouseOver = categoryName => {
-		console.log(categoryName)
-		console.log(isShopHovering)
 		if (categoryName === 'Shop') {
 			setIsShopHovering(true)
 		} else {

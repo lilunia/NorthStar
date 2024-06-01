@@ -12,8 +12,8 @@
 	top: 0;
 	left: 0;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	justify-content: start;
+	align-items: start;
 	flex-direction: column;
 	width: 90%;
 	height: 100vh;
@@ -28,7 +28,6 @@
 	padding: 3rem;
 }
 .menuList li a {
-
 	transition: padding 0.3s;
 }
 .menuList li a:hover {

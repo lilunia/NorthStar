@@ -28,7 +28,6 @@ export function Layout({ children }) {
 						''
 					) : (
 						<MainMenu
-							isShopHovering={isShopHovering}
 							setIsShopHovering={setIsShopHovering}
 						/>
 					)}

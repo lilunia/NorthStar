@@ -4,7 +4,6 @@ export function MenuBar({ setIsMenuShowed }) {
 	return (
 		<div
 			onClick={() => {
-				console.log('menu just clicked')
 				setIsMenuShowed(prev => !prev)
 			}}
 			className={styles.menuBar}
