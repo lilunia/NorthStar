@@ -7,6 +7,7 @@ import { SpecialOffer } from '../../components/SpecialOffer/SpecialOffer'
 import { CenteredContent } from '../../components/CenteredContent/CenteredContent'
 import { Products } from '../../components/Products/Products'
 import { Button } from '../../components/Button/Button'
+import { FlexCenter } from '../../components/FlexCenter/FlexCenter'
 
 export function Home() {
 	const products = [
@@ -248,9 +249,15 @@ export function Home() {
 			<CenteredContent>
 				<Baner />
 				<SpecialOffer />
+				<Products
+					headerText='Top Sellers'
+					textInfo='Browse our top-selling products'
+					products={topSellers}
+				/>
+				<FlexCenter>
+					<Button border={true}>Buy now</Button>
+				</FlexCenter>
 			</CenteredContent>
-			<Products textInfo='Browse our top-selling products' products={topSellers} />
-			<Button border={true}>Buy now</Button>
 		</Layout>
 	)
 }

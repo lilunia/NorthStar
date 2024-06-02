@@ -15,8 +15,8 @@ export function ProductsList() {
 			subcategory: 'koszulki',
 			productName: 'T-Shirt',
 			brand: 'Top Brand',
-			pricePLN: 49,
-			priceUSD: 10,
+			priceEUR: 10,
+			priceUSD: 12,
 			photos: [
 				'http://localhost:3000/product-photos/man-t-shirt-1.jpg',
 				'http://localhost:3000/product-photos/man-t-shirt-4.jpg',

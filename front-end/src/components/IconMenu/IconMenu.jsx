@@ -8,7 +8,7 @@ export function IconMenu() {
 	return (
 		<ul className={styles.iconMenu}>
 			<li>
-				<Link to='/ulubione'>
+				<Link to='/favourites'>
 					<img src={HEART} />
 				</Link>
 			</li>

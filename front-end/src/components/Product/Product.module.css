@@ -1,6 +1,6 @@
 .product {
 	position: relative;
-    margin: 0 auto;
+	margin: 0 auto;
 }
 .product img {
 	width: 300px;
@@ -20,7 +20,8 @@
 	width: 1.5rem;
 	height: 1.5rem;
 	background-image: url('../../assets/heart.svg');
+	background-repeat: none;
 }
-.heart:hover{
-    background-image: url('../../assets/heart-full.svg');
+.heart:hover {
+	background-image: url('../../assets/heart-full.svg');
 }
