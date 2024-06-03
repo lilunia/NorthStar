@@ -11,8 +11,9 @@ import { MenuBar } from '../MenuBar/MenuBar'
 import { useMediaQuery } from 'react-responsive'
 import { MenuList } from '../MenuList/MenuList'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import { Outlet } from 'react-router-dom'
 
-export function Layout({ children }) {
+export function Layout() {
 	const [isShopHovering, setIsShopHovering] = useState(false)
 	const [isMenuShowed, setIsMenuShowed] = useState(false)
 	const isMobileOrTablet = useMediaQuery({ maxWidth: 768 })
@@ -40,7 +41,7 @@ export function Layout({ children }) {
 				</TopBar>
 				{isMenuShowed ? <MenuList setIsMenuShowed={setIsMenuShowed} /> : ''}
 				{isShopHovering ? <GenderMenu setIsShopHovering={setIsShopHovering} /> : ''}
-				{children}
+				<Outlet/>
 			</MainContent>
 			<Footer />
 		</>

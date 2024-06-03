@@ -1,5 +1,4 @@
 import { Hero } from '../../components/Hero/Hero'
-import { Layout } from '../../components/Layout/Layout'
 import HERO_IMG from '../../assets/hero.jpg'
 import { NewArrivals } from '../../components/NewArrivals/NewArrivals'
 import { Baner } from '../../components/Baner/Baner'
@@ -243,7 +242,7 @@ export function Home() {
 		},
 	]
 	return (
-		<Layout>
+		<>
 			<Hero heroImage={HERO_IMG} />
 			<NewArrivals products={products} />
 			<CenteredContent>
@@ -258,6 +257,6 @@ export function Home() {
 					<Button border={true}>Buy now</Button>
 				</FlexCenter>
 			</CenteredContent>
-		</Layout>
+		</>
 	)
 }

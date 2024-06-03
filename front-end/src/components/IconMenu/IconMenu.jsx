@@ -13,7 +13,7 @@ export function IconMenu() {
 				</Link>
 			</li>
 			<li>
-				<Link to='/koszyk'>
+				<Link to='/cart'>
 					<img src={BAG_ICON} />
                     <div className={styles.numberOfItems}>{cartItems}</div>
 				</Link>

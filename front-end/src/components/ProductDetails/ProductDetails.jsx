@@ -31,7 +31,6 @@ export function ProductDetails({ product }) {
 							<p
 								onClick={() => {
 									setSelectedSize(index)
-									console.log(index)
 								}}
 								key={size}
 								className={`${styles.sizeNumber} ${

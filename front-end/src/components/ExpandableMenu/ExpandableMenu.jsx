@@ -1,10 +1,13 @@
 import styles from './ExpandableMenu.module.css'
 import { GENDERS } from '../../constants/categories'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import ARROW from '../../assets/arrow-menu.svg'
 
 export function ExpandableMenu() {
-	const activePath = 'man'
+	const params = useParams()
+
+	const activePath = params.gender
+
 	return (
 		<div className={styles.expandableMenu}>
 			<p>Shop</p>
@@ -12,7 +15,7 @@ export function ExpandableMenu() {
 				{GENDERS.map(gender => {
 					return (
 						<li key={gender.path}>
-							<NavLink>
+							<NavLink to={`/${params.category}/${gender.path}`}>
 								{gender.categoryName}
 								<img
 									src={ARROW}
@@ -29,9 +32,7 @@ export function ExpandableMenu() {
 										return (
 											<li key={subcategory.path}>
 												<NavLink
-													to={
-														subcategory.path
-													}
+													to={`/${params.category}/${params.gender}/${subcategory.path}`}
 												>
 													{
 														subcategory.categoryName

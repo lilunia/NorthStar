@@ -5,7 +5,7 @@ import { FavouriteProduct } from '../FavouriteProduct/FavouriteProduct'
 export function FavouriteList({ products }) {
 	return (
 		<CenteredContent>
-			<h3>Favourities</h3>
+			<h3>Favourites</h3>
 			<div className={styles.favouriteList}>
 				<tr>
 					<th>Product</th>
