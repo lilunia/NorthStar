@@ -31,7 +31,7 @@ export function ProductDescription({ infos }) {
 							/>
 						</div>
 
-						{selectedInfo === index && <p>{info.content}</p>}
+						{selectedInfo === index && <p className={styles.descriptionContent}>{info.content}</p>}
 					</li>
 				)
 			})}

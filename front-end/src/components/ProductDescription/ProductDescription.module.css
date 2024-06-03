@@ -17,8 +17,9 @@
 .descriptionImg {
 	transform: rotate(90deg);
 }
-
+.descriptionContent {
+	text-align: left;
+}
 .selected {
 	transform: rotate(270deg);
 }
-

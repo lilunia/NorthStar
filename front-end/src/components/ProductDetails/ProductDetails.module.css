@@ -5,11 +5,9 @@
 }
 .productName {
 	margin: 1rem 0;
-	text-align: left;
 }
 .productBrand {
 	margin: 1rem 0;
-	text-align: left;
 	font-size: 1rem;
 }
 .productPrice {
@@ -17,10 +15,20 @@
 	color: var(--color-theme-primary);
 	margin-bottom: 2rem;
 }
-.sizeList {
+.productPrice,
+.size,
+.productBrand,
+.productName {
+	text-align: left;
+}
+.sizeList,
+.buttons {
 	display: flex;
 	justify-content: start;
 	align-items: center;
+}
+
+.sizeList {
 	flex-wrap: wrap;
 	margin-bottom: 2rem;
 }
@@ -58,11 +66,6 @@
 .heart:hover {
 	background-image: url('../../assets/heart-full.svg');
 	background-repeat: none;
-}
-.buttons {
-	display: flex;
-	justify-content: start;
-	align-items: center;
 }
 
 @media (min-width: 576px) {

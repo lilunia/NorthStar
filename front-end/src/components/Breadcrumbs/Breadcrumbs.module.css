@@ -6,8 +6,8 @@
 	gap: 0.5rem;
 }
 .breadcrumbs li a {
-	font-size: 0.75rem;
-	text-transform: uppercase;
+	display: flex;
+	font-size: 1rem;
 }
 
 .breadcrumbs li a:global(.active) {
