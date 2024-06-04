@@ -5,6 +5,8 @@ import { useState } from 'react'
 
 export function MenuList({ setIsMenuShowed }) {
 	const [shopActive, setShopactive] = useState(false)
+	const [genderActive, setGenderActive] = useState('woman')
+
 	return (
 		<div
 			className={styles.menuBackground}
@@ -17,12 +19,17 @@ export function MenuList({ setIsMenuShowed }) {
 					return (
 						<li key={category.path}>
 							<NavLink
-								to={category.path}
+								to={
+									category.path === 'shop'
+										? `/${category.path}/woman`
+										: category.path
+								}
 								onMouseOver={() => {
 									if (category.path === 'shop') {
 										setShopactive(prev => !prev)
 									}
 								}}
+								className={styles.highlight}
 							>
 								{category.categoryName}
 							</NavLink>
@@ -32,12 +39,49 @@ export function MenuList({ setIsMenuShowed }) {
 										return (
 											<li key={gender.path}>
 												<NavLink
-													to={gender.path}
+													to={`/${category.path}/${gender.path}`}
+													onMouseOver={() => {
+														setGenderActive(
+															gender.path
+														)
+														if (
+															gender.path ===
+															genderActive
+														) {
+															setGenderActive(
+																''
+															)
+														}
+													}}
 												>
 													{
 														gender.categoryName
 													}
 												</NavLink>
+												{genderActive ===
+													gender.path && (
+												<ul>
+													{gender.subcategories.map(
+														subcategory => {
+															return (
+																<li
+																	key={
+																		subcategory.path
+																	}
+																>
+																	<NavLink
+																		to={`/${category.path}/${gender.path}/${subcategory.path}`}
+																	>
+																		{
+																			subcategory.categoryName
+																		}
+																	</NavLink>
+																</li>
+															)
+														}
+													)}
+												</ul>
+												)}
 											</li>
 										)
 									})}

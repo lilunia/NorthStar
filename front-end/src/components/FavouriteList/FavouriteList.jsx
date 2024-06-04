@@ -2,7 +2,7 @@ import styles from './FavouriteList.module.css'
 import { CenteredContent } from '../CenteredContent/CenteredContent'
 import { FavouriteProduct } from '../FavouriteProduct/FavouriteProduct'
 
-export function FavouriteList({ products }) {
+export function FavouriteList({ favourites }) {
 	return (
 		<CenteredContent>
 			<h3>Favourites</h3>
@@ -16,8 +16,8 @@ export function FavouriteList({ products }) {
 				</tr>
 
 				<div className={styles.favouriteProducts}>
-					{products.map(product => {
-						return <FavouriteProduct key={product.id} product={product} />
+					{favourites.map(favourite => {
+						return <FavouriteProduct key={favourite.id} favourite={favourite} />
 					})}
 				</div>
 			</div>

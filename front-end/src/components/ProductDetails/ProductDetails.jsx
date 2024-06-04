@@ -1,10 +1,14 @@
 import styles from './ProductDetails.module.css'
 import { Button } from '../Button/Button'
 import { ProductDescription } from '../ProductDescription/ProductDescription'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { CartContext } from '../../contexts/CartContext'
+import { useFetcher } from 'react-router-dom'
 
 export function ProductDetails({ product }) {
+	const [, addProductToCart] = useContext(CartContext)
 	const [selectedSize, setSelectedSize] = useState(null)
+	const { Form } = useFetcher()
 	const sizeArray = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
 	const descriptionContent = [
 		{
@@ -46,8 +50,23 @@ export function ProductDetails({ product }) {
 				</div>
 			</div>
 			<div className={styles.buttons}>
-				<Button border={true}>Add to cart</Button>
-				<button className={styles.heart}></button>
+				<Button
+					onClick={() => {
+						addProductToCart(product)
+					}}
+					border={true}
+				>
+					Add to cart
+				</Button>
+				<Form
+					onClick={e => {
+						e.stopPropagation()
+					}}
+					method='POST'
+					action={`/add-to-favourites/${product.id}`}
+				>
+					<button className={styles.heart}></button>
+				</Form>
 			</div>
 			<ProductDescription infos={descriptionContent} />
 		</div>

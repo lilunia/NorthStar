@@ -24,14 +24,17 @@
 }
 
 .menuList li {
-	font-size: 2rem;
-	padding: 3rem;
+	font-size: 1.25rem;
+	padding: 0.5rem 1rem;
 }
 .menuList li a {
 	transition: padding 0.3s;
 }
 .menuList li a:hover {
-	padding-left: 3.5rem;
+	padding-left: 0.5rem;
+	color: var(--color-theme-primary);
+}
+.highlight {
 	color: var(--color-theme-primary);
 }
 
@@ -41,5 +44,12 @@
 	}
 	to {
 		left: 0;
+	}
+}
+
+@media (min-width: 480px) {
+	.menuList li {
+		font-size: 2rem;
+		padding: 1rem 2rem;
 	}
 }

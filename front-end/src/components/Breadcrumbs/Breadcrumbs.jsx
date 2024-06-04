@@ -9,18 +9,20 @@ export function Breadcrumbs() {
 	const foundCategory = CATEGORIES.find(c => c.path === category)
 	const foundGender = GENDERS.find(g => g.path === gender)
 
+	const breadcrumbs = []
+	if (foundCategory) {
+		breadcrumbs.push(
+			{
+				categoryName: foundCategory.categoryName,
+				path: `/${foundCategory.path}`,
+			},
+			{
+				categoryName: foundGender.categoryName,
+				path: `/${foundCategory.path}/${foundGender.path}`,
+			}
+		)
+	}
 
-
-	const breadcrumbs = [
-		{
-			categoryName: foundCategory.categoryName,
-			path: `/${foundCategory.path}`,
-		},
-		{
-			categoryName: foundGender.categoryName,
-			path: `/${foundCategory.path}/${foundGender.path}`,
-		},
-	]
 	if (subcategory) {
 		const foundSubcategory = foundGender.subcategories.find(sc => sc.path === subcategory)
 		breadcrumbs.push({

@@ -1,9 +1,13 @@
 import styles from './CartProduct.module.css'
 import REMOVE from '../../assets/remove.svg'
 import { useState } from 'react'
+import { Price } from '../Price/Price'
 
 export function CartProduct({ product }) {
 	const [quantity, setQuantity] = useState(1)
+
+	const price = <Price product={product} />
+
 	return (
 		<tr className={styles.favouriteProduct}>
 			<td className={styles.photo}>
@@ -12,7 +16,7 @@ export function CartProduct({ product }) {
 			</td>
 			<td className={styles.price}>
 				<span>Price:</span>
-				<p>${product.priceUSD}</p>
+				<p>{price}</p>
 			</td>
 			<td className={styles.quantity}>
 				<span>Quantity:</span>
@@ -26,7 +30,7 @@ export function CartProduct({ product }) {
 			</td>
 			<td className={styles.totalPrice}>
 				<span>Total price:</span>
-				<p>${product.priceUSD}</p>
+				<p>{price}</p>
 			</td>
 			<td className={styles.manageFavourite}>
 				<img className={styles.removeProduct} src={REMOVE} />

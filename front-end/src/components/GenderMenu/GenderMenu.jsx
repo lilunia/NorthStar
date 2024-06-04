@@ -1,10 +1,8 @@
 import styles from './GenderMenu.module.css'
 import { GENDERS } from '../../constants/categories'
-import { NavLink, useParams } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export function GenderMenu({ setIsShopHovering }) {
-	const params = useParams()
-
 	const handleMouseLeave = () => {
 		setIsShopHovering(false)
 	}
@@ -14,7 +12,7 @@ export function GenderMenu({ setIsShopHovering }) {
 				{GENDERS.map(gender => {
 					return (
 						<li key={gender.path}>
-							<NavLink to={`/${params.category}/${gender.path}`}>
+							<NavLink to={`/shop/${gender.path}`}>
 								{gender.categoryName}
 							</NavLink>
 						</li>

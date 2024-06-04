@@ -5,7 +5,9 @@ export function Photos({ product }) {
 	const [activePhoto, setActivePhoto] = useState(product.photos[0])
 	return (
 		<div className={styles.photos}>
-			<img className={styles.mainPhoto} src={activePhoto} />
+			<div className={styles.photoContainer}>
+				<img className={styles.mainPhoto} src={activePhoto} />
+			</div>
 			<div className={styles.thumbnails}>
 				{product.photos.map(photo => {
 					return (

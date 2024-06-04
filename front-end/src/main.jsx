@@ -12,8 +12,19 @@ import { ProductsList } from './views/ProductsList/ProductsList'
 import { SingleProduct } from './views/SingleProduct/SingleProduct'
 import { productListLoader } from './api/productListLoader'
 import { ProductLoader } from './api/productLoader'
+import { addToFavourites } from './api/addToFavourites'
+import { favouritesLoader } from './api/favouritesLoader'
+import { deleteFromFavourites } from './api/deleteFromFavourites'
 
 const router = createBrowserRouter([
+	{
+		path: '/add-to-favourites/:productId',
+		action: addToFavourites,
+	},
+	{
+		path: '/delete-from-favourites/:favouriteId',
+		action: deleteFromFavourites
+	},
 	{
 		path: '',
 		element: <Layout />,
@@ -25,6 +36,7 @@ const router = createBrowserRouter([
 			{
 				path: '/favourites',
 				element: <Favourites />,
+				loader: favouritesLoader,
 			},
 			{
 				path: '/:category?',
@@ -38,7 +50,7 @@ const router = createBrowserRouter([
 			{
 				path: '/:category/:gender?/:subcategory/:productId',
 				element: <SingleProduct />,
-				loader: ProductLoader
+				loader: ProductLoader,
 			},
 		],
 	},
