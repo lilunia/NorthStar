@@ -1,6 +1,7 @@
 import styles from './Hero.module.css'
 import { CenteredContent } from '../CenteredContent/CenteredContent'
 import { Button } from '../Button/Button'
+import { NavLink } from 'react-router-dom'
 
 export function Hero({ heroImage }) {
 	return (
@@ -9,7 +10,9 @@ export function Hero({ heroImage }) {
 				<CenteredContent>
 					<div className={styles.contentWrapper}>
 						<h2>Stylist picks beat the heat</h2>
-						<Button makeWhite={true}>Shop now</Button>
+						<NavLink to={'/shop/woman'}>
+							<Button makeWhite={true}>Shop now</Button>
+						</NavLink>
 					</div>
 				</CenteredContent>
 			</div>

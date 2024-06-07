@@ -15,6 +15,9 @@ import { ProductLoader } from './api/productLoader'
 import { addToFavourites } from './api/addToFavourites'
 import { favouritesLoader } from './api/favouritesLoader'
 import { deleteFromFavourites } from './api/deleteFromFavourites'
+import { addToCart } from './api/addToCart'
+import { cartLoader } from './api/cartLoader'
+import { deleteFromCart } from './api/deleteFromCart'
 
 const router = createBrowserRouter([
 	{
@@ -23,15 +26,25 @@ const router = createBrowserRouter([
 	},
 	{
 		path: '/delete-from-favourites/:favouriteId',
-		action: deleteFromFavourites
+		action: deleteFromFavourites,
+	},
+	{
+		path: '/add-to-cart/:productId',
+		action: addToCart,
+	},
+	{
+		path: '/delete-from-cart/:productId',
+		action: deleteFromCart,
 	},
 	{
 		path: '',
 		element: <Layout />,
+		loader: cartLoader,
 		children: [
 			{
 				path: '/cart',
 				element: <Cart />,
+				loader: cartLoader,
 			},
 			{
 				path: '/favourites',

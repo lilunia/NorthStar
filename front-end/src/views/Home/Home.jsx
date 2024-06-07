@@ -7,6 +7,7 @@ import { CenteredContent } from '../../components/CenteredContent/CenteredConten
 import { Products } from '../../components/Products/Products'
 import { Button } from '../../components/Button/Button'
 import { FlexCenter } from '../../components/FlexCenter/FlexCenter'
+import { NavLink } from 'react-router-dom'
 
 export function Home() {
 	const products = [
@@ -254,7 +255,9 @@ export function Home() {
 					products={topSellers}
 				/>
 				<FlexCenter>
-					<Button border={true}>Buy now</Button>
+					<NavLink to={'/shop/woman'}>
+						<Button border={true}>Buy now</Button>
+					</NavLink>
 				</FlexCenter>
 			</CenteredContent>
 		</>

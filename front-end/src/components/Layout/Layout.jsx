@@ -6,40 +6,32 @@ import { MainContent } from '../MainContent/MainContent'
 import { MainMenu } from '../MainMenu/MainMenu'
 import { TopBar } from '../TopBar/TopBar'
 import { Logo } from '../Logo/Logo'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { MenuBar } from '../MenuBar/MenuBar'
 import { useMediaQuery } from 'react-responsive'
 import { MenuList } from '../MenuList/MenuList'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLoaderData } from 'react-router-dom'
 import { CurrencyContext } from '../../contexts/CurrencyContext'
 import { CURRENCIES } from '../../constants/currencies'
 import { CartContext } from '../../contexts/CartContext'
 
 export function Layout() {
+	const cartProducts = useLoaderData()
+	const noOfProductsInCart = cartProducts.length
+
 	const [isShopHovering, setIsShopHovering] = useState(false)
 	const [isMenuShowed, setIsMenuShowed] = useState(false)
 	const [currency, setCurrency] = useState(localStorage['currentCurrency'] || CURRENCIES.EUR)
 
-	const [cartProducts, setCartProducts] = useState(() => {
-		return localStorage['cartProducts'] ? JSON.parse(localStorage['cartProducts']) : []
-	})
+	useEffect(() => {}, [noOfProductsInCart])
 
 	const isMobileOrTablet = useMediaQuery({ maxWidth: 768 })
-
 	isMenuShowed ? disableBodyScroll(document) : enableBodyScroll(document)
-
-	function addProductToCart(product) {
-		setCartProducts(prevCartProducts => {
-			const newState = [...prevCartProducts, product]
-			localStorage['cartProducts'] = JSON.stringify(newState)
-			return newState
-		})
-	}
 
 	return (
 		<>
-			<CartContext.Provider value={[cartProducts, addProductToCart]}>
+			<CartContext.Provider>
 				<CurrencyContext.Provider value={[currency, setCurrency]}>
 					<MainContent>
 						<TopBar>
@@ -52,7 +44,7 @@ export function Layout() {
 
 							<div>
 								<CurrencySelector />
-								<IconMenu />
+								<IconMenu noOfProductsInCart={noOfProductsInCart} />
 								{isMobileOrTablet ? (
 									<MenuBar setIsMenuShowed={setIsMenuShowed} />
 								) : (

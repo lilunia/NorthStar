@@ -162,7 +162,7 @@ export function ProductsList() {
 	// 			'Nemo et nam quasi in suscipit earum odit laborum repellat quo dolore rem, sequi eaque sapiente quibu',
 	// 	},
 	// ]
-	const {products, numberOfPages} = useLoaderData()
+	const { products, numberOfPages } = useLoaderData()
 	const params = useParams()
 	const foundGender = GENDERS.find(g => g.path === params.gender)
 
@@ -176,7 +176,7 @@ export function ProductsList() {
 		<CenteredContent>
 			<FlexContainer>
 				<ExpandableMenu />
-				<div>
+				<div style={{ width: '100%' }}>
 					<Breadcrumbs />
 					<Products
 						headerText={

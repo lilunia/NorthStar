@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import { CurrencyContext } from '../../contexts/CurrencyContext'
 import { CURRENCIES, CURRENCY_SIGN } from '../../constants/currencies'
 
-export function CartSummary({ products }) {
+export function CartSummary({ cartProducts }) {
 	const [currency] = useContext(CurrencyContext)
 
 	const shippingCosts = {
@@ -23,8 +23,8 @@ export function CartSummary({ products }) {
 	const minSumForFreeShipping = minSumsForFreeShipping[currency]
 
 	let sum = 0
-	products.forEach(product => {
-		sum += currency === CURRENCIES.USD ? product.priceUSD : product.pricePLN
+	cartProducts.forEach(product => {
+		sum += currency === CURRENCIES.USD ? product.product.priceUSD : product.product.pricePLN
 	})
 
 	const totalCost = sum > minSumForFreeShipping ? sum : sum + shippingCost
@@ -62,7 +62,10 @@ export function CartSummary({ products }) {
 
 				<div className={styles.cartInfoDelivery}>
 					<img src={CAR} />
-					<p>Free shipping from {minSumForFreeShipping}{currencySign}</p>
+					<p>
+						Free shipping from {minSumForFreeShipping}
+						{currencySign}
+					</p>
 				</div>
 			</div>
 		</div>

@@ -49,7 +49,7 @@ Elementy zwracane i zapisywane do serwera mają następujące pola:
 
 | Ścieżka               | Metoda | Jak działa?                                                                                    |
 | --------------------- | ------ | ---------------------------------------------------------------------------------------------- |
-| /products             | `GET`  | Wyszstkie produkty                                                                             |
+| /products             | `GET`  | Wszystkie produkty                                                                             |
 | /women/bestsellers    | `GET`  | Pobiera bestsellery z kategorii "Kobieta"                                                      |
 | /men/bestsellers      | `GET`  | Pobiera bestsellery z kategorii "Mężczyzna"                                                    |
 | /children/bestsellers | `GET`  | Pobiera bestsellery z kategorii "Dzięci"                                                       |

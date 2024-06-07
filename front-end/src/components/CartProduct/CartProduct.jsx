@@ -1,12 +1,16 @@
 import styles from './CartProduct.module.css'
 import REMOVE from '../../assets/remove.svg'
-import { useState } from 'react'
-import { Price } from '../Price/Price'
 
-export function CartProduct({ product }) {
+import { Price } from '../Price/Price'
+import { useState } from 'react'
+import { useFetcher } from 'react-router-dom'
+
+export function CartProduct({ cartProduct }) {
+	const product = cartProduct.product
 	const [quantity, setQuantity] = useState(1)
 
 	const price = <Price product={product} />
+	const { Form } = useFetcher()
 
 	return (
 		<tr className={styles.favouriteProduct}>
@@ -33,7 +37,11 @@ export function CartProduct({ product }) {
 				<p>{price}</p>
 			</td>
 			<td className={styles.manageFavourite}>
-				<img className={styles.removeProduct} src={REMOVE} />
+				<Form action={`/delete-from-cart/${cartProduct.id}`} method='DELETE'>
+					<button>
+						<img className={styles.removeProduct} src={REMOVE} />
+					</button>
+				</Form>
 			</td>
 		</tr>
 	)

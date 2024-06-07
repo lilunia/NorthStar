@@ -1,14 +1,14 @@
 import styles from './ProductDetails.module.css'
 import { Button } from '../Button/Button'
 import { ProductDescription } from '../ProductDescription/ProductDescription'
-import { useContext, useState } from 'react'
-import { CartContext } from '../../contexts/CartContext'
 import { useFetcher } from 'react-router-dom'
+import { useState } from 'react'
+import { Price } from '../Price/Price'
 
 export function ProductDetails({ product }) {
-	const [, addProductToCart] = useContext(CartContext)
 	const [selectedSize, setSelectedSize] = useState(null)
 	const { Form } = useFetcher()
+	const price = <Price product={product} />
 	const sizeArray = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
 	const descriptionContent = [
 		{
@@ -26,7 +26,7 @@ export function ProductDetails({ product }) {
 		<div className={styles.details}>
 			<h3 className={styles.productName}>{product.productName}</h3>
 			<p className={styles.productBrand}>{product.brand}</p>
-			<p className={styles.productPrice}>{product.priceUSD}$</p>
+			<p className={styles.productPrice}>{price}</p>
 			<div>
 				<p className={styles.size}>Select size:</p>
 				<div className={styles.sizeList}>
@@ -50,14 +50,9 @@ export function ProductDetails({ product }) {
 				</div>
 			</div>
 			<div className={styles.buttons}>
-				<Button
-					onClick={() => {
-						addProductToCart(product)
-					}}
-					border={true}
-				>
-					Add to cart
-				</Button>
+				<Form method='POST' action={`/add-to-cart/${product.id}`}>
+					<Button border={true}>Add to cart</Button>
+				</Form>
 				<Form
 					onClick={e => {
 						e.stopPropagation()

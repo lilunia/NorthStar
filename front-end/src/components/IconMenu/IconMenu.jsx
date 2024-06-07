@@ -3,8 +3,10 @@ import BAG_ICON from '../../assets/shopping-bag.svg'
 import HEART from '../../assets/heart.svg'
 import { Link } from 'react-router-dom'
 
-export function IconMenu() {
-    const cartItems = 2
+
+export function IconMenu({noOfProductsInCart}) {
+
+
 	return (
 		<ul className={styles.iconMenu}>
 			<li>
@@ -15,7 +17,7 @@ export function IconMenu() {
 			<li>
 				<Link to='/cart'>
 					<img src={BAG_ICON} />
-                    <div className={styles.numberOfItems}>{cartItems}</div>
+                    <div className={styles.numberOfItems}>{noOfProductsInCart}</div>
 				</Link>
 			</li>
 		</ul>

@@ -1,7 +1,7 @@
 import { CartProduct } from '../CartProduct/CartProduct'
 import styles from '../CartProductList/CartProductList.module.css'
 
-export function CartProductList({ products }) {
+export function CartProductList({ cartProducts }) {
 	return (
 		<>
 			<h3>Cart</h3>
@@ -15,8 +15,8 @@ export function CartProductList({ products }) {
 				</tr>
 
 				<div className={styles.favouriteProducts}>
-					{products.map(product => {
-						return <CartProduct key={product.id} product={product} />
+					{cartProducts.map(cartProduct => {
+						return <CartProduct key={cartProduct.id} cartProduct={cartProduct} />
 					})}
 				</div>
 			</div>
