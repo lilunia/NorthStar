@@ -10,6 +10,7 @@ import { useLoaderData } from 'react-router-dom'
 export function SingleProduct() {
 	const product = useLoaderData()
 
+
 	return (
 		<CenteredContent>
 			<FlexContainer>

@@ -52,7 +52,6 @@ Elementy zwracane i zapisywane do serwera mają następujące pola:
 | /products             | `GET`  | Wszystkie produkty                                                                             |
 | /women/bestsellers    | `GET`  | Pobiera bestsellery z kategorii "Kobieta"                                                      |
 | /men/bestsellers      | `GET`  | Pobiera bestsellery z kategorii "Mężczyzna"                                                    |
-| /children/bestsellers | `GET`  | Pobiera bestsellery z kategorii "Dzięci"                                                       |
 | /products             | `GET`  | Pobiera wszystkie produkty.                                                                    |
 | /favourites           | `GET`  | Pobiera wszystkie produkty dodane do listy ulubionych                                          |
 | /favourites           | `POST` | Dodaje produkt do listy ulubionych. Wymagania przesłania body z ID produktu np: {productId: 1} |

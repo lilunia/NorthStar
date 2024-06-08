@@ -25,6 +25,7 @@ export function Breadcrumbs() {
 
 	if (subcategory) {
 		const foundSubcategory = foundGender.subcategories.find(sc => sc.path === subcategory)
+
 		breadcrumbs.push({
 			categoryName: foundSubcategory.categoryName,
 			path: `/${foundCategory.path}/${foundGender.path}/${foundSubcategory.path}`,

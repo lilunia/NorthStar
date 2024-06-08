@@ -17,7 +17,7 @@ export function ProductDetails({ product }) {
 		},
 		{
 			title: 'Material',
-			content: '100% cotton',
+			content: product.material,
 		},
 		{ title: 'Care instructions', content: product.maintenanceInfo },
 	]
