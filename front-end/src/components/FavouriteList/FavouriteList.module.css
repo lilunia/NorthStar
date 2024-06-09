@@ -20,7 +20,7 @@ th {
 	border-bottom: 0.125em solid var(--color-dark-grey);
 }
 @media (min-width: 768px) {
-	tr {
+	.favouriteList tr {
 		width: 100%;
 		display: flex;
 		justify-content: start;
@@ -29,11 +29,11 @@ th {
 }
 @media (min-width: 992px) {
 	.favouriteList {
-		margin: 5rem 3rem;
+		margin: 5rem;
 	}
 }
 @media (min-width: 1200px) {
 	.favouriteList {
-		margin: 5rem;
+		margin: 5rem 15rem;
 	}
 }

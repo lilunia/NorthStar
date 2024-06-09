@@ -24,7 +24,7 @@ export function CartSummary({ cartProducts }) {
 
 	let sum = 0
 	cartProducts.forEach(product => {
-		sum += currency === CURRENCIES.USD ? product.product.priceUSD : product.product.pricePLN
+		sum += currency === CURRENCIES.USD ? product.product.priceUSD : product.product.priceEUR
 	})
 
 	const totalCost = sum > minSumForFreeShipping ? sum : sum + shippingCost

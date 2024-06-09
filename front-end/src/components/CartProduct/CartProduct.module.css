@@ -3,8 +3,15 @@ td {
 	padding: 1em;
 	width: 100%;
 }
+.favouriteProduct a{
+	padding: 0 1em;
+}
 .photo {
 	width: 200%;
+	padding-left: 0;
+}
+.photo:hover {
+	color: var(--color-theme-primary);
 }
 .favouriteProduct,
 .manageFavourite,
@@ -36,9 +43,6 @@ td {
 	margin-right: 0.5rem;
 }
 
-.photo h5 {
-	text-align: center;
-}
 .photo img {
 	height: 200%;
 }

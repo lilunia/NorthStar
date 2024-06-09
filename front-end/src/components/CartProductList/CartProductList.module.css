@@ -13,6 +13,7 @@
 }
 tr {
 	display: none;
+	width: 100%;
 }
 
 th {
@@ -23,7 +24,7 @@ th {
 	border-bottom: 0.125em solid var(--color-dark-grey);
 }
 @media (min-width: 768px) {
-	tr {
+	.favouriteList tr {
 		width: 100%;
 		display: flex;
 		justify-content: start;

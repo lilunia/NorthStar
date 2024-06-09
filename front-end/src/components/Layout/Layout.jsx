@@ -6,28 +6,32 @@ import { MainContent } from '../MainContent/MainContent'
 import { MainMenu } from '../MainMenu/MainMenu'
 import { TopBar } from '../TopBar/TopBar'
 import { Logo } from '../Logo/Logo'
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import { MenuBar } from '../MenuBar/MenuBar'
 import { useMediaQuery } from 'react-responsive'
 import { MenuList } from '../MenuList/MenuList'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-import { Outlet, useLoaderData } from 'react-router-dom'
+import { Outlet, useLoaderData, useLocation } from 'react-router-dom'
 import { CurrencyContext } from '../../contexts/CurrencyContext'
 import { CURRENCIES } from '../../constants/currencies'
 import { CartContext } from '../../contexts/CartContext'
 
 export function Layout() {
+	const location = useLocation()
 	const cartProducts = useLoaderData()
 	const noOfProductsInCart = cartProducts.length
 
 	const [isShopHovering, setIsShopHovering] = useState(false)
 	const [isMenuShowed, setIsMenuShowed] = useState(false)
 	const [currency, setCurrency] = useState(localStorage['currentCurrency'] || CURRENCIES.EUR)
+	const isMobileOrTablet = useMediaQuery({ maxWidth: 768 })
+	isMenuShowed ? disableBodyScroll(document) : enableBodyScroll(document)
 
 	useEffect(() => {}, [noOfProductsInCart])
 
-	const isMobileOrTablet = useMediaQuery({ maxWidth: 768 })
-	isMenuShowed ? disableBodyScroll(document) : enableBodyScroll(document)
+	useLayoutEffect(() => {
+		document.documentElement.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+	}, [location.pathname])
 
 	return (
 		<>

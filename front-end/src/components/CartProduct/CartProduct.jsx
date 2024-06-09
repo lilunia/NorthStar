@@ -3,7 +3,8 @@ import REMOVE from '../../assets/remove.svg'
 
 import { Price } from '../Price/Price'
 import { useState } from 'react'
-import { useFetcher } from 'react-router-dom'
+import { useFetcher, Link } from 'react-router-dom'
+import { ENDPOINT_TO_PATH_MAPING_GENDER } from '../../constants/api'
 
 export function CartProduct({ cartProduct }) {
 	const product = cartProduct.product
@@ -11,13 +12,22 @@ export function CartProduct({ cartProduct }) {
 
 	const price = <Price product={product} />
 	const { Form } = useFetcher()
+	console.log(product)
 
 	return (
 		<tr className={styles.favouriteProduct}>
-			<td className={styles.photo}>
-				<img src={product.photos[0]} alt='' />
-				<h5>{product.productName}</h5>
-			</td>
+			<Link
+				to={`/shop/${ENDPOINT_TO_PATH_MAPING_GENDER[product.gender]}/${product.subcategory}/${
+					product.id
+				}`}
+				className={styles.photo}
+			>
+				<td className={styles.photo}>
+					<img src={product.photos[0]} alt='' />
+					<h5>{product.productName}</h5>{' '}
+				</td>
+			</Link>
+
 			<td className={styles.price}>
 				<span>Price:</span>
 				<p>{price}</p>

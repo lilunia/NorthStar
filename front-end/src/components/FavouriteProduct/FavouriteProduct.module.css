@@ -3,6 +3,16 @@ td {
 	padding: 1em;
 	width: 100%;
 }
+.favouriteProduct a {
+	padding: 0 1rem;
+}
+.photo {
+	width: 100%;
+	padding-left: 0;
+}
+.photo:hover {
+	color: var(--color-theme-primary);
+}
 .favouriteProduct,
 .manageFavourite,
 .photo,
@@ -34,23 +44,14 @@ td {
 	margin-right: 0.5rem;
 }
 
-.photo h5 {
-	text-align: center;
-}
 .photo img {
 	height: 200%;
-}
-.quantity input {
-	width: 30%;
-	padding: 1rem;
-	text-align: center;
 }
 .favouriteProduct {
 	flex-wrap: wrap;
 }
 .addFavourite,
 .addFavourite p,
-.price p,
 .photo h5 {
 	margin: 0;
 }
@@ -60,17 +61,12 @@ button {
 }
 
 @media (min-width: 768px) {
-	.favouriteProduct,
-	.manageFavourite,
-	.photo,
-	.price,
-	.quantity,
-	.totalPrice {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+	.photo {
+		justify-content: start;
 	}
-
+	.photo img {
+		margin-right: 2rem;
+	}
 	.favouriteProduct {
 		flex-wrap: nowrap;
 		border: 0;
@@ -78,15 +74,5 @@ button {
 	}
 	span {
 		display: none;
-	}
-
-	.quantity input {
-		width: 100%;
-	}
-}
-
-@media (min-width: 992px) {
-	.quantity input {
-		width: 50%;
 	}
 }
