@@ -12,7 +12,6 @@ export function CartProduct({ cartProduct }) {
 
 	const price = <Price product={product} />
 	const { Form } = useFetcher()
-	console.log(product)
 
 	return (
 		<tr className={styles.favouriteProduct}>

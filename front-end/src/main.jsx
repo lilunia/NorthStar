@@ -18,7 +18,7 @@ import { deleteFromFavourites } from './api/deleteFromFavourites'
 import { addToCart } from './api/addToCart'
 import { cartLoader } from './api/cartLoader'
 import { deleteFromCart } from './api/deleteFromCart'
-import {allproductsLoader} from './api/allproductsLoader'
+import { newsAndBestsLoader} from './api/newsAndBestsLoader'
 
 const router = createBrowserRouter([
 	{
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
 			{
 				path: '/:category?',
 				element: <Home />,
-				loader: allproductsLoader,
+				loader: newsAndBestsLoader,
 			},
 			{
 				path: '/:category/:gender?/:subcategory?',

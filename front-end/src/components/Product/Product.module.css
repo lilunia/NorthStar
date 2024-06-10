@@ -21,6 +21,7 @@
 	margin: 1rem 0;
 }
 .product p {
+	text-align: center;
 	color: var(--color-theme-primary);
 }
 .product button{

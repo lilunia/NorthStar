@@ -10,7 +10,7 @@ export function Baner() {
 				<img src={CAR_IMG} />
 				<div className={styles.banerText}>
 					<h4>Free shipping</h4>
-					<p>Enjoy free shipping on all orders above $100</p>
+					<p>Enjoy free shipping on all orders above $150</p>
 				</div>
 			</div>
 			<div className={styles.banerColumn}>

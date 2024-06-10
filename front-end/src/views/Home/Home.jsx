@@ -11,18 +11,20 @@ import { NavLink, useLoaderData } from 'react-router-dom'
 
 export function Home() {
 	const products = useLoaderData()
+	const news = products[0]
+	const bestsellers = products[1]
 
 	return (
 		<>
 			<Hero heroImage={HERO_IMG} />
-			<NewArrivals products={products} />
+			<NewArrivals products={news} />
 			<CenteredContent>
 				<Baner />
 				<SpecialOffer />
 				<Products
 					headerText='Top Sellers'
 					textInfo='Browse our top-selling products'
-					products={products}
+					products={bestsellers}
 				/>
 				<FlexCenter>
 					<NavLink to={'/shop/woman'}>

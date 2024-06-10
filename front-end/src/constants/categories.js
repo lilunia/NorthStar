@@ -29,6 +29,10 @@ export const GENDERS = [
 				categoryName: 'Trousers',
 				path: 'trousers',
 			},
+			{
+				categoryName: 'Suit',
+				path: 'suit',
+			},
 		],
 	},
 	{
@@ -46,6 +50,10 @@ export const GENDERS = [
 			{
 				categoryName: 'Trousers',
 				path: 'trousers',
+			},
+			{
+				categoryName: 'Suit',
+				path: 'suit',
 			},
 		],
 	},
