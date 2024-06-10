@@ -1070,11 +1070,15 @@
     {
       "productId": 14,
       "id": 2
+    },
+    {
+      "productId": 14,
+      "id": 3
     }
   ],
   "cart": [
     {
-      "productId": 15,
+      "productId": 23,
       "id": 1
     }
   ]

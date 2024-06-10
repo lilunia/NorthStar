@@ -1,10 +1,9 @@
 import styles from './NewArrivals.module.css'
-import { CenteredContent } from '../CenteredContent/CenteredContent'
 import { Product } from '../Product/Product'
 
 export function NewArrivals({ products }) {
 	return (
-		<CenteredContent>
+		<>
 			<h3>Discover NEW Arrivals</h3>
 			<h4>Recently added</h4>
 			<div className={styles.productsWrapper}>
@@ -12,6 +11,6 @@ export function NewArrivals({ products }) {
 					return <Product key={product.id} product={product} />
 				})}
 			</div>
-		</CenteredContent>
+		</>
 	)
 }

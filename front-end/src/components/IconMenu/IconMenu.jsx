@@ -10,7 +10,7 @@ export function IconMenu({noOfProductsInCart}) {
 	return (
 		<ul className={styles.iconMenu}>
 			<li>
-				<Link to='/favourites'>
+				<Link className={styles.heart} to='/favourites'>
 					<img src={HEART} />
 				</Link>
 			</li>

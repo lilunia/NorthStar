@@ -17,8 +17,8 @@ export function Home() {
 	return (
 		<>
 			<Hero heroImage={HERO_IMG} />
-			<NewArrivals products={news} />
 			<CenteredContent>
+				<NewArrivals products={news} />
 				<Baner />
 				<SpecialOffer />
 				<Products

@@ -15,6 +15,7 @@ import { Outlet, useLoaderData, useLocation } from 'react-router-dom'
 import { CurrencyContext } from '../../contexts/CurrencyContext'
 import { CURRENCIES } from '../../constants/currencies'
 import { CartContext } from '../../contexts/CartContext'
+import { CenteredContent } from '../CenteredContent/CenteredContent'
 
 export function Layout() {
 	const location = useLocation()
@@ -56,6 +57,7 @@ export function Layout() {
 								)}
 							</div>
 						</TopBar>
+
 						{isMenuShowed ? <MenuList setIsMenuShowed={setIsMenuShowed} /> : ''}
 						{isShopHovering ? (
 							<GenderMenu setIsShopHovering={setIsShopHovering} />
