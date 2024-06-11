@@ -4,9 +4,12 @@ import BAG from '../../assets/shopping-bag.svg'
 import { Link, useFetcher } from 'react-router-dom'
 import { Price } from '../Price/Price'
 import { ENDPOINT_TO_PATH_MAPING_GENDER } from '../../constants/api'
+import { CartContext } from '../../contexts/CartContext'
+import { useContext } from 'react'
 
 export function FavouriteProduct({ favourite }) {
 	const product = favourite.product
+	const [chosenSize] = useContext(CartContext)
 
 	const { Form } = useFetcher()
 
@@ -22,7 +25,10 @@ export function FavouriteProduct({ favourite }) {
 			>
 				<td className={styles.photo}>
 					<img src={product.photos[0]} alt='' />
-					<h5>{product.productName}</h5>
+					<div>
+						<h5>{product.productName}</h5>
+						<p>size: {chosenSize} </p>
+					</div>
 				</td>
 			</Link>
 			<td className={styles.price}>

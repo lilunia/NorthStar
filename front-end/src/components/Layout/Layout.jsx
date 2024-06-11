@@ -15,7 +15,7 @@ import { Outlet, useLoaderData, useLocation } from 'react-router-dom'
 import { CurrencyContext } from '../../contexts/CurrencyContext'
 import { CURRENCIES } from '../../constants/currencies'
 import { CartContext } from '../../contexts/CartContext'
-import { CenteredContent } from '../CenteredContent/CenteredContent'
+
 
 export function Layout() {
 	const location = useLocation()
@@ -25,6 +25,7 @@ export function Layout() {
 	const [isShopHovering, setIsShopHovering] = useState(false)
 	const [isMenuShowed, setIsMenuShowed] = useState(false)
 	const [currency, setCurrency] = useState(localStorage['currentCurrency'] || CURRENCIES.EUR)
+	const [chosenSize, setChosenSize] = useState('')
 	const isMobileOrTablet = useMediaQuery({ maxWidth: 768 })
 	isMenuShowed ? disableBodyScroll(document) : enableBodyScroll(document)
 
@@ -36,7 +37,7 @@ export function Layout() {
 
 	return (
 		<>
-			<CartContext.Provider>
+			<CartContext.Provider value={[chosenSize, setChosenSize]}>
 				<CurrencyContext.Provider value={[currency, setCurrency]}>
 					<MainContent>
 						<TopBar>

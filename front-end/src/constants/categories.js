@@ -30,7 +30,7 @@ export const GENDERS = [
 				path: 'trousers',
 			},
 			{
-				categoryName: 'Suit',
+				categoryName: 'Suits',
 				path: 'suit',
 			},
 		],
@@ -52,7 +52,7 @@ export const GENDERS = [
 				path: 'trousers',
 			},
 			{
-				categoryName: 'Suit',
+				categoryName: 'Suits',
 				path: 'suit',
 			},
 		],

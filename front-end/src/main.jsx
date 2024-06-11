@@ -11,14 +11,14 @@ import { Home } from './views/Home/Home'
 import { ProductsList } from './views/ProductsList/ProductsList'
 import { SingleProduct } from './views/SingleProduct/SingleProduct'
 import { productListLoader } from './api/productListLoader'
-import { productLoader } from './api/productLoader'
+import { productAndCartLoader } from './api/productAndCartLoader'
 import { addToFavourites } from './api/addToFavourites'
 import { favouritesLoader } from './api/favouritesLoader'
 import { deleteFromFavourites } from './api/deleteFromFavourites'
 import { addToCart } from './api/addToCart'
 import { cartLoader } from './api/cartLoader'
 import { deleteFromCart } from './api/deleteFromCart'
-import { newsAndBestsLoader} from './api/newsAndBestsLoader'
+import { newsAndBestsLoader } from './api/newsAndBestsLoader'
 
 const router = createBrowserRouter([
 	{
@@ -65,7 +65,7 @@ const router = createBrowserRouter([
 			{
 				path: '/:category/:gender?/:subcategory/:productId',
 				element: <SingleProduct />,
-				loader: productLoader,
+				loader: productAndCartLoader,
 			},
 		],
 	},

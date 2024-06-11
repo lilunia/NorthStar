@@ -6,6 +6,10 @@ import { useLoaderData } from 'react-router-dom'
 export function Cart() {
 	const cartProducts = useLoaderData()
 
+	// cartProducts.map(product => {
+	// 	console.log(product)
+	// })
+
 	return (
 		<CenteredContent>
 			<CartProductList cartProducts={cartProducts} />

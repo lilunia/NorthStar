@@ -3,7 +3,7 @@ td {
 	padding: 1em;
 	width: 100%;
 }
-.favouriteProduct a{
+.favouriteProduct a {
 	padding: 0 1em;
 }
 .photo {
@@ -46,6 +46,13 @@ td {
 .photo img {
 	height: 200%;
 }
+.photo p {
+	text-align: left;
+}
+.price p,
+.photo h5 {
+	margin: 0;
+}
 .quantity input {
 	width: 30%;
 	padding: 1rem;
@@ -53,10 +60,6 @@ td {
 }
 .favouriteProduct {
 	flex-wrap: wrap;
-}
-.price p,
-.photo h5 {
-	margin: 0;
 }
 
 @media (min-width: 768px) {

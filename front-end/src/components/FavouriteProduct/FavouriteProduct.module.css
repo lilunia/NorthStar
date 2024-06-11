@@ -13,6 +13,17 @@ td {
 .photo:hover {
 	color: var(--color-theme-primary);
 }
+.bag,
+.photo img {
+	margin-right: 0.5rem;
+}
+
+.photo img {
+	height: 200%;
+}
+.photo p {
+	text-align: left;
+}
 .favouriteProduct,
 .manageFavourite,
 .photo,
@@ -39,14 +50,7 @@ td {
 .removeProduct:hover {
 	transform: scale(1.4);
 }
-.bag,
-.photo img {
-	margin-right: 0.5rem;
-}
 
-.photo img {
-	height: 200%;
-}
 .favouriteProduct {
 	flex-wrap: wrap;
 }
@@ -55,6 +59,7 @@ td {
 .photo h5 {
 	margin: 0;
 }
+
 button {
 	border: none;
 	background: none;

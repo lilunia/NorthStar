@@ -8,10 +8,14 @@ import { ENDPOINT_TO_PATH_MAPING_GENDER } from '../../constants/api'
 
 export function CartProduct({ cartProduct }) {
 	const product = cartProduct.product
+
 	const [quantity, setQuantity] = useState(1)
 
 	const price = <Price product={product} />
 	const { Form } = useFetcher()
+
+	// const priceToCount = currency === CURRENCIES.EUR ? product.priceEUR : product.priceUSD
+	// const totalPrice = priceToCount * quantity
 
 	return (
 		<tr className={styles.favouriteProduct}>
@@ -23,7 +27,10 @@ export function CartProduct({ cartProduct }) {
 			>
 				<td className={styles.photo}>
 					<img src={product.photos[0]} alt='' />
-					<h5>{product.productName}</h5>{' '}
+					<div>
+						<h5>{product.productName}</h5>
+						<p>size: {product.size} </p>
+					</div>
 				</td>
 			</Link>
 

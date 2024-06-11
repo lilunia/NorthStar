@@ -16,6 +16,12 @@ This shop was created with Vite+React.
 ### Home Page
 
   <p align="center">
+  <img src="./front-end/src/assets/home.PNG"width= "70%" height= "70%" alt="Main app screenshot">
+  </p>
+
+### Shop Page
+
+  <p align="center">
   <img src="./front-end/src/assets/shop.PNG"width= "70%" height= "70%" alt="Main app screenshot">
   </p>
 

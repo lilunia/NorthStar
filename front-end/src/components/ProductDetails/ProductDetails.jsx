@@ -2,11 +2,15 @@ import styles from './ProductDetails.module.css'
 import { Button } from '../Button/Button'
 import { ProductDescription } from '../ProductDescription/ProductDescription'
 import { useFetcher } from 'react-router-dom'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { Price } from '../Price/Price'
+import REFRESH_IMG from '../../assets/return.svg'
+import { CartContext } from '../../contexts/CartContext'
 
-export function ProductDetails({ product }) {
+export function ProductDetails({ product, currentCart }) {
 	const [selectedSize, setSelectedSize] = useState(null)
+	const [errorText, setErrorText] = useState('Please select a size')
+	const [chosenSize, setChosenSize] = useContext(CartContext)
 	const { Form } = useFetcher()
 	const price = <Price product={product} />
 	const sizeArray = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
@@ -22,6 +26,16 @@ export function ProductDetails({ product }) {
 		{ title: 'Care instructions', content: product.maintenanceInfo },
 	]
 
+	const checkACart = id => {
+		currentCart.map(cartItem => {
+			if (cartItem.productId === id) {
+				setSelectedSize(null)
+				setErrorText('You already have this item in your cart')
+			}
+		})
+		console.log(product)
+	}
+
 	return (
 		<div className={styles.details}>
 			<h3 className={styles.productName}>{product.productName}</h3>
@@ -35,6 +49,7 @@ export function ProductDetails({ product }) {
 							<p
 								onClick={() => {
 									setSelectedSize(index)
+									setChosenSize(size)
 								}}
 								key={size}
 								className={`${styles.sizeNumber} ${
@@ -47,11 +62,31 @@ export function ProductDetails({ product }) {
 							</p>
 						)
 					})}
+					<button
+						className={styles.clear}
+						onClick={() => {
+							setSelectedSize(null)
+							setErrorText('')
+							product.size = `${chosenSize}`
+						}}
+					>
+						<img src={REFRESH_IMG} alt='' />
+					</button>
 				</div>
+
+				{selectedSize === null && <p className={styles.error}>{errorText}</p>}
 			</div>
 			<div className={styles.buttons}>
-				<Form method='POST' action={`/add-to-cart/${product.id}`}>
-					<Button border={true}>Add to cart</Button>
+				<Form
+					method='POST'
+					action={selectedSize !== null ? `/add-to-cart/${product.id}` : ''}
+					onClick={() => {
+						checkACart(product.id)
+					}}
+				>
+					<Button disabled={selectedSize === null ? true : false} border={true}>
+						Add to cart
+					</Button>
 				</Form>
 				<Form
 					onClick={e => {

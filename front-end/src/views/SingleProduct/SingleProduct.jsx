@@ -9,6 +9,8 @@ import { useLoaderData } from 'react-router-dom'
 
 export function SingleProduct() {
 	const product = useLoaderData()
+	const singleProduct = product[0]
+	const currentCart = product[1]
 
 
 	return (
@@ -18,8 +20,8 @@ export function SingleProduct() {
 				<div style={{ width: '100%' }}>
 					<Breadcrumbs />
 					<FlexCenter>
-						<Photos product={product} />
-						<ProductDetails product={product} />
+						<Photos product={singleProduct} />
+						<ProductDetails currentCart={currentCart} product={singleProduct} />
 					</FlexCenter>
 				</div>
 			</FlexContainer>

@@ -67,7 +67,18 @@
 	background-image: url('../../assets/heart-full.svg');
 	background-repeat: none;
 }
-
+.clear img {
+	height: 1rem;
+	margin-left: 2rem;
+	transition: transform 0.2s;
+}
+.clear img:hover {
+	transform: scale(1.2);
+}
+.error{
+	text-align: left;
+	color: rgb(100, 12, 12);
+}
 @media (min-width: 576px) {
 	.sizeNumber {
 		height: 3rem;

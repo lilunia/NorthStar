@@ -1,15 +1,23 @@
 import styles from './MenuList.module.css'
 import { NavLink } from 'react-router-dom'
 import { CATEGORIES, GENDERS } from '../../constants/categories'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export function MenuList({ setIsMenuShowed }) {
 	const [shopActive, setShopactive] = useState(false)
 	const [genderActive, setGenderActive] = useState('woman')
+	const [scroll, setScroll] = useState(0)
+
+	useEffect(() => {
+		if (window.scrollY !== 0) {
+			setScroll(window.scrollY)
+		}
+	}, [scroll])
 
 	return (
 		<div
 			className={styles.menuBackground}
+			style={{ top: `${scroll + 70}px` }}
 			onClick={() => {
 				setIsMenuShowed(prev => !prev)
 			}}
@@ -60,27 +68,27 @@ export function MenuList({ setIsMenuShowed }) {
 												</NavLink>
 												{genderActive ===
 													gender.path && (
-												<ul>
-													{gender.subcategories.map(
-														subcategory => {
-															return (
-																<li
-																	key={
-																		subcategory.path
-																	}
-																>
-																	<NavLink
-																		to={`/${category.path}/${gender.path}/${subcategory.path}`}
-																	>
-																		{
-																			subcategory.categoryName
+													<ul>
+														{gender.subcategories.map(
+															subcategory => {
+																return (
+																	<li
+																		key={
+																			subcategory.path
 																		}
-																	</NavLink>
-																</li>
-															)
-														}
-													)}
-												</ul>
+																	>
+																		<NavLink
+																			to={`/${category.path}/${gender.path}/${subcategory.path}`}
+																		>
+																			{
+																				subcategory.categoryName
+																			}
+																		</NavLink>
+																	</li>
+																)
+															}
+														)}
+													</ul>
 												)}
 											</li>
 										)
