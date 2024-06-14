@@ -50,6 +50,7 @@ td {
 	text-align: left;
 }
 .price p,
+.totalPrice p,
 .photo h5 {
 	margin: 0;
 }

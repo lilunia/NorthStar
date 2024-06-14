@@ -11,7 +11,7 @@ export function SingleProduct() {
 	const product = useLoaderData()
 	const singleProduct = product[0]
 	const currentCart = product[1]
-
+	const currentFavs = product[2]
 
 	return (
 		<CenteredContent>
@@ -21,7 +21,11 @@ export function SingleProduct() {
 					<Breadcrumbs />
 					<FlexCenter>
 						<Photos product={singleProduct} />
-						<ProductDetails currentCart={currentCart} product={singleProduct} />
+						<ProductDetails
+							currentCart={currentCart}
+							currentFavs={currentFavs}
+							product={singleProduct}
+						/>
 					</FlexCenter>
 				</div>
 			</FlexContainer>

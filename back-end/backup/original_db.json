@@ -1062,14 +1062,6 @@
 		}
 	],
 	"favourites": [
-		{
-			"productId": 4,
-			"id": 1
-		},
-		{
-			"productId": 14,
-			"id": 2
-		}
 	],
 	"cart": []
 }

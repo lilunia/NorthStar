@@ -1062,14 +1062,16 @@
   ],
   "favourites": [
     {
-      "productId": 15,
-      "id": 1
+      "productId": 16,
+      "id": 2
     }
   ],
   "cart": [
     {
       "productId": 14,
-      "id": 2
+      "size": "S",
+      "quantity": 1,
+      "id": 1
     }
   ]
 }

@@ -24,11 +24,21 @@ td {
 .photo p {
 	text-align: left;
 }
+.price p {
+	margin-bottom: 0;
+	margin-left: 2em;
+}
+.addFavourite,
+.addFavourite p,
+.photo h5 {
+	margin: 0;
+}
+
 .favouriteProduct,
 .manageFavourite,
 .photo,
 .price,
-.quantity,
+.size,
 .totalPrice,
 .addFavourite {
 	display: flex;
@@ -54,10 +64,10 @@ td {
 .favouriteProduct {
 	flex-wrap: wrap;
 }
-.addFavourite,
-.addFavourite p,
-.photo h5 {
-	margin: 0;
+.size select{
+	border: none;
+	background:none;
+	font-size: 1rem;
 }
 
 button {
@@ -79,5 +89,8 @@ button {
 	}
 	span {
 		display: none;
+	}
+	.price p {
+		margin-left: 0;
 	}
 }

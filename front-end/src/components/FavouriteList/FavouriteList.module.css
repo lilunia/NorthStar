@@ -29,11 +29,11 @@ th {
 }
 @media (min-width: 992px) {
 	.favouriteList {
-		margin: 5rem;
+		margin: 5rem 3rem;
 	}
 }
 @media (min-width: 1200px) {
 	.favouriteList {
-		margin: 5rem 15rem;
+		margin: 5rem 10rem;
 	}
 }

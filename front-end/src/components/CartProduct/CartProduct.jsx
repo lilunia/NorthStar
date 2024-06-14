@@ -2,20 +2,23 @@ import styles from './CartProduct.module.css'
 import REMOVE from '../../assets/remove.svg'
 
 import { Price } from '../Price/Price'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { useFetcher, Link } from 'react-router-dom'
 import { ENDPOINT_TO_PATH_MAPING_GENDER } from '../../constants/api'
+import { CurrencyContext } from '../../contexts/CurrencyContext'
+import { CURRENCIES, CURRENCY_SIGN } from '../../constants/currencies'
+// import { CartContext } from '../../contexts/CartContext'
 
 export function CartProduct({ cartProduct }) {
 	const product = cartProduct.product
-
-	const [quantity, setQuantity] = useState(1)
+	const [currency] = useContext(CurrencyContext)
+	const [quantity, setQuantity] = useState(cartProduct.quantity)
 
 	const price = <Price product={product} />
 	const { Form } = useFetcher()
 
-	// const priceToCount = currency === CURRENCIES.EUR ? product.priceEUR : product.priceUSD
-	// const totalPrice = priceToCount * quantity
+	const priceToCount = currency === CURRENCIES.EUR ? product.priceEUR : product.priceUSD
+	const totalPrice = priceToCount * quantity 
 
 	return (
 		<tr className={styles.favouriteProduct}>
@@ -29,7 +32,7 @@ export function CartProduct({ cartProduct }) {
 					<img src={product.photos[0]} alt='' />
 					<div>
 						<h5>{product.productName}</h5>
-						<p>size: {product.size} </p>
+						<p>size: {cartProduct.size} </p>
 					</div>
 				</td>
 			</Link>
@@ -50,7 +53,7 @@ export function CartProduct({ cartProduct }) {
 			</td>
 			<td className={styles.totalPrice}>
 				<span>Total price:</span>
-				<p>{price}</p>
+				<p>{totalPrice}{CURRENCY_SIGN[currency]}</p>
 			</td>
 			<td className={styles.manageFavourite}>
 				<Form action={`/delete-from-cart/${cartProduct.id}`} method='DELETE'>

@@ -2,15 +2,16 @@ import styles from './ProductDetails.module.css'
 import { Button } from '../Button/Button'
 import { ProductDescription } from '../ProductDescription/ProductDescription'
 import { useFetcher } from 'react-router-dom'
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import { Price } from '../Price/Price'
 import REFRESH_IMG from '../../assets/return.svg'
-import { CartContext } from '../../contexts/CartContext'
+import { editQuantity } from '../../api/editQuantity'
 
-export function ProductDetails({ product, currentCart }) {
+export function ProductDetails({ product, currentCart, currentFavs }) {
 	const [selectedSize, setSelectedSize] = useState(null)
 	const [errorText, setErrorText] = useState('Please select a size')
-	const [chosenSize, setChosenSize] = useContext(CartContext)
+	const [isOnFavs, setIsOnFavs] = useState(false)
+	const [quantity, setQuantity] = useState(1)
 	const { Form } = useFetcher()
 	const price = <Price product={product} />
 	const sizeArray = ['XS', 'S', 'M', 'L', 'XL', 'XXL']
@@ -26,14 +27,24 @@ export function ProductDetails({ product, currentCart }) {
 		{ title: 'Care instructions', content: product.maintenanceInfo },
 	]
 
-	const checkACart = id => {
+	const checkACart = (id, size) => {
+		console.log(selectedSize)
 		currentCart.map(cartItem => {
-			if (cartItem.productId === id) {
+			if (cartItem.productId === id && cartItem.size === size) {
 				setSelectedSize(null)
 				setErrorText('You already have this item in your cart')
+				setQuantity(cartItem.quantity++)
+				editQuantity(cartItem, quantity)
 			}
 		})
-		console.log(product)
+	}
+	const checkAFavs = id => {
+		currentFavs.map(favItem => {
+			if (favItem.productId === id) {
+				setIsOnFavs(true)
+				console.log('You already have this item on your favList')
+			} else setIsOnFavs(false)
+		})
 	}
 
 	return (
@@ -49,7 +60,6 @@ export function ProductDetails({ product, currentCart }) {
 							<p
 								onClick={() => {
 									setSelectedSize(index)
-									setChosenSize(size)
 								}}
 								key={size}
 								className={`${styles.sizeNumber} ${
@@ -67,7 +77,6 @@ export function ProductDetails({ product, currentCart }) {
 						onClick={() => {
 							setSelectedSize(null)
 							setErrorText('')
-							product.size = `${chosenSize}`
 						}}
 					>
 						<img src={REFRESH_IMG} alt='' />
@@ -79,9 +88,13 @@ export function ProductDetails({ product, currentCart }) {
 			<div className={styles.buttons}>
 				<Form
 					method='POST'
-					action={selectedSize !== null ? `/add-to-cart/${product.id}` : ''}
+					action={
+						selectedSize !== null
+							? `/add-to-cart/${product.id}/${sizeArray[selectedSize]}/${quantity}`
+							: ''
+					}
 					onClick={() => {
-						checkACart(product.id)
+						checkACart(product.id, sizeArray[selectedSize])
 					}}
 				>
 					<Button disabled={selectedSize === null ? true : false} border={true}>
@@ -91,11 +104,15 @@ export function ProductDetails({ product, currentCart }) {
 				<Form
 					onClick={e => {
 						e.stopPropagation()
+						checkAFavs(product.id)
 					}}
 					method='POST'
-					action={`/add-to-favourites/${product.id}`}
+					action={`/add-to-favourites/${product.id}/${sizeArray[selectedSize]}`}
 				>
-					<button className={styles.heart}></button>
+					<button
+						disabled={isOnFavs}
+						className={styles.heart}
+					></button>
 				</Form>
 			</div>
 			<ProductDescription infos={descriptionContent} />

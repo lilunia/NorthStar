@@ -16,7 +16,6 @@ import { CurrencyContext } from '../../contexts/CurrencyContext'
 import { CURRENCIES } from '../../constants/currencies'
 import { CartContext } from '../../contexts/CartContext'
 
-
 export function Layout() {
 	const location = useLocation()
 	const cartProducts = useLoaderData()
@@ -25,7 +24,7 @@ export function Layout() {
 	const [isShopHovering, setIsShopHovering] = useState(false)
 	const [isMenuShowed, setIsMenuShowed] = useState(false)
 	const [currency, setCurrency] = useState(localStorage['currentCurrency'] || CURRENCIES.EUR)
-	const [chosenSize, setChosenSize] = useState('')
+	// const [quantity, setQuantity] = useState(1)
 	const isMobileOrTablet = useMediaQuery({ maxWidth: 768 })
 	isMenuShowed ? disableBodyScroll(document) : enableBodyScroll(document)
 
@@ -37,39 +36,35 @@ export function Layout() {
 
 	return (
 		<>
-			<CartContext.Provider value={[chosenSize, setChosenSize]}>
-				<CurrencyContext.Provider value={[currency, setCurrency]}>
-					<MainContent>
-						<TopBar>
-							<Logo />
-							{isMobileOrTablet ? (
-								''
-							) : (
-								<MainMenu setIsShopHovering={setIsShopHovering} />
-							)}
-
-							<div>
-								<CurrencySelector />
-								<IconMenu noOfProductsInCart={noOfProductsInCart} />
-								{isMobileOrTablet ? (
-									<MenuBar setIsMenuShowed={setIsMenuShowed} />
-								) : (
-									''
-								)}
-							</div>
-						</TopBar>
-
-						{isMenuShowed ? <MenuList setIsMenuShowed={setIsMenuShowed} /> : ''}
-						{isShopHovering ? (
-							<GenderMenu setIsShopHovering={setIsShopHovering} />
-						) : (
+			{/* <CartContext.Provider value={[quantity, setQuantity]}> */}
+			<CurrencyContext.Provider value={[currency, setCurrency]}>
+				<MainContent>
+					<TopBar>
+						<Logo />
+						{isMobileOrTablet ? (
 							''
+						) : (
+							<MainMenu setIsShopHovering={setIsShopHovering} />
 						)}
-						<Outlet />
-					</MainContent>
-					<Footer />
-				</CurrencyContext.Provider>
-			</CartContext.Provider>
+
+						<div>
+							<CurrencySelector />
+							<IconMenu noOfProductsInCart={noOfProductsInCart} />
+							{isMobileOrTablet ? (
+								<MenuBar setIsMenuShowed={setIsMenuShowed} />
+							) : (
+								''
+							)}
+						</div>
+					</TopBar>
+
+					{isMenuShowed ? <MenuList setIsMenuShowed={setIsMenuShowed} /> : ''}
+					{isShopHovering ? <GenderMenu setIsShopHovering={setIsShopHovering} /> : ''}
+					<Outlet />
+				</MainContent>
+				<Footer />
+			</CurrencyContext.Provider>
+			{/* </CartContext.Provider> */}
 		</>
 	)
 }

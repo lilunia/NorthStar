@@ -3,14 +3,21 @@ import CAR_IMG from '../../assets/shipping.svg'
 import RING_IMG from '../../assets/support.svg'
 import RETURN_IMG from '../../assets/return.svg'
 import SECURE_IMG from '../../assets/finger-print.svg'
+import { CURRENCIES } from '../../constants/currencies'
+import { useContext } from 'react'
+import { CurrencyContext } from '../../contexts/CurrencyContext'
 export function Baner() {
+	const [currency] = useContext(CurrencyContext)
 	return (
 		<div className={styles.baner}>
 			<div className={styles.banerColumn}>
 				<img src={CAR_IMG} />
 				<div className={styles.banerText}>
 					<h4>Free shipping</h4>
-					<p>Enjoy free shipping on all orders above $150</p>
+					<p>
+						Enjoy free shipping on all orders above{' '}
+						{currency === CURRENCIES.EUR ? '100€ ' : '150$'}
+					</p>
 				</div>
 			</div>
 			<div className={styles.banerColumn}>

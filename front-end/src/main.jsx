@@ -22,7 +22,7 @@ import { newsAndBestsLoader } from './api/newsAndBestsLoader'
 
 const router = createBrowserRouter([
 	{
-		path: '/add-to-favourites/:productId',
+		path: '/add-to-favourites/:productId/:size?',
 		action: addToFavourites,
 	},
 	{
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
 		action: deleteFromFavourites,
 	},
 	{
-		path: '/add-to-cart/:productId',
+		path: '/add-to-cart/:productId/:size/:quantity?',
 		action: addToCart,
 	},
 	{
