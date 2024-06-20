@@ -7,7 +7,7 @@ import { useFetcher, Link } from 'react-router-dom'
 import { ENDPOINT_TO_PATH_MAPING_GENDER } from '../../constants/api'
 import { CurrencyContext } from '../../contexts/CurrencyContext'
 import { CURRENCIES, CURRENCY_SIGN } from '../../constants/currencies'
-// import { CartContext } from '../../contexts/CartContext'
+import { editQuantity } from '../../api/editQuantity'
 
 export function CartProduct({ cartProduct }) {
 	const product = cartProduct.product
@@ -18,7 +18,8 @@ export function CartProduct({ cartProduct }) {
 	const { Form } = useFetcher()
 
 	const priceToCount = currency === CURRENCIES.EUR ? product.priceEUR : product.priceUSD
-	const totalPrice = priceToCount * quantity 
+	const totalPrice = priceToCount * quantity
+
 
 	return (
 		<tr className={styles.favouriteProduct}>
@@ -43,17 +44,31 @@ export function CartProduct({ cartProduct }) {
 			</td>
 			<td className={styles.quantity}>
 				<span>Quantity:</span>
-				<input
-					type='number'
-					className={styles.quantityNumber}
-					value={quantity}
-					min={1}
-					onChange={e => setQuantity(Number(e.target.value))}
-				/>
+				<Form
+					method='PATCH'
+					action='edit-item-quantity'
+					onChange={e => {
+						editQuantity(cartProduct, e.target.value)
+						setQuantity(e.target.value)
+					}}
+				>
+					<input
+						type='number'
+						className={styles.quantityNumber}
+						onChange={e => {
+							setQuantity(e.target.value)
+						}}
+						value={quantity}
+						min={1}
+					/>
+				</Form>
 			</td>
 			<td className={styles.totalPrice}>
 				<span>Total price:</span>
-				<p>{totalPrice}{CURRENCY_SIGN[currency]}</p>
+				<p>
+					{totalPrice}
+					{CURRENCY_SIGN[currency]}
+				</p>
 			</td>
 			<td className={styles.manageFavourite}>
 				<Form action={`/delete-from-cart/${cartProduct.id}`} method='DELETE'>

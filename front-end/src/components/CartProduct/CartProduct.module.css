@@ -55,9 +55,12 @@ td {
 	margin: 0;
 }
 .quantity input {
-	width: 30%;
+	width: 40%;
 	padding: 1rem;
 	text-align: center;
+}
+.quantity form {
+	text-align: right;
 }
 .favouriteProduct {
 	flex-wrap: wrap;
@@ -82,11 +85,15 @@ td {
 
 	.quantity input {
 		width: 100%;
+		text-align: center;
+	}
+	.quantity form {
+		text-align: left;
 	}
 }
 
 @media (min-width: 992px) {
 	.quantity input {
-		width: 50%;
+		width: 70%;
 	}
 }

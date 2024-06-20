@@ -8,14 +8,13 @@
 	color: var(--color-white);
 	background-color: var(--color-theme-primary);
 	transition: background-color 0.5s;
-	
 }
 .white {
 	color: var(--color-theme-primary);
 	background-color: var(--color-white);
 }
-.border{
-	border: .125rem solid var(--color-theme-primary);
+.border {
+	border: 0.125rem solid var(--color-theme-primary);
 }
 .button:hover {
 	color: var(--color-theme-primary);
@@ -25,6 +24,11 @@
 	color: var(--color-white);
 	background-color: var(--color-theme-primary);
 }
-.fullWidth{
+.fullWidth {
 	width: 100%;
 }
+
+:disabled {
+	background-color: var(--color-text-grey);
+}
+

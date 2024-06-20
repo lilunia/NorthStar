@@ -28,11 +28,9 @@ export function ProductDetails({ product, currentCart, currentFavs }) {
 	]
 
 	const checkACart = (id, size) => {
-		console.log(selectedSize)
 		currentCart.map(cartItem => {
 			if (cartItem.productId === id && cartItem.size === size) {
 				setSelectedSize(null)
-				setErrorText('You already have this item in your cart')
 				setQuantity(cartItem.quantity++)
 				editQuantity(cartItem, quantity)
 			}
@@ -76,7 +74,7 @@ export function ProductDetails({ product, currentCart, currentFavs }) {
 						className={styles.clear}
 						onClick={() => {
 							setSelectedSize(null)
-							setErrorText('')
+							setErrorText('Select a size')
 						}}
 					>
 						<img src={REFRESH_IMG} alt='' />
@@ -95,6 +93,7 @@ export function ProductDetails({ product, currentCart, currentFavs }) {
 					}
 					onClick={() => {
 						checkACart(product.id, sizeArray[selectedSize])
+						setErrorText('')
 					}}
 				>
 					<Button disabled={selectedSize === null ? true : false} border={true}>
@@ -109,10 +108,7 @@ export function ProductDetails({ product, currentCart, currentFavs }) {
 					method='POST'
 					action={`/add-to-favourites/${product.id}/${sizeArray[selectedSize]}`}
 				>
-					<button
-						disabled={isOnFavs}
-						className={styles.heart}
-					></button>
+					<button disabled={isOnFavs} className={styles.heart}></button>
 				</Form>
 			</div>
 			<ProductDescription infos={descriptionContent} />

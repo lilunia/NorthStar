@@ -7,6 +7,7 @@ import { CURRENCIES, CURRENCY_SIGN } from '../../constants/currencies'
 
 export function CartSummary({ cartProducts }) {
 	const [currency] = useContext(CurrencyContext)
+	console.log(cartProducts);
 
 	const shippingCosts = {
 		[CURRENCIES.USD]: 15,

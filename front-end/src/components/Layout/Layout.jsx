@@ -14,7 +14,7 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import { Outlet, useLoaderData, useLocation } from 'react-router-dom'
 import { CurrencyContext } from '../../contexts/CurrencyContext'
 import { CURRENCIES } from '../../constants/currencies'
-import { CartContext } from '../../contexts/CartContext'
+// import { CartContext } from '../../contexts/CartContext'
 
 export function Layout() {
 	const location = useLocation()
@@ -24,7 +24,6 @@ export function Layout() {
 	const [isShopHovering, setIsShopHovering] = useState(false)
 	const [isMenuShowed, setIsMenuShowed] = useState(false)
 	const [currency, setCurrency] = useState(localStorage['currentCurrency'] || CURRENCIES.EUR)
-	// const [quantity, setQuantity] = useState(1)
 	const isMobileOrTablet = useMediaQuery({ maxWidth: 768 })
 	isMenuShowed ? disableBodyScroll(document) : enableBodyScroll(document)
 
