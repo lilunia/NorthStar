@@ -8,8 +8,12 @@
 .favouriteProducts {
 	width: 100%;
 }
+.productName{
+	width: 200%;
+}
 tr {
 	display: none;
+	width: 100%;
 }
 
 th {

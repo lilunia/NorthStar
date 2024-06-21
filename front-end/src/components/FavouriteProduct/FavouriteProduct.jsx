@@ -20,7 +20,6 @@ export function FavouriteProduct({ favourite, currentCart }) {
 	const checkACart = (id, size) => {
 		currentCart.map(cartItem => {
 			if (cartItem.productId === id && cartItem.size === size) {
-				console.log(cartItem)
 				setCurrentSize('')
 				setQuantity(cartItem.quantity++)
 				editQuantity(cartItem, quantity)

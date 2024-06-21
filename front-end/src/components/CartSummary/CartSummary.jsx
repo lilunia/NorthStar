@@ -1,36 +1,33 @@
 import styles from './CartSummary.module.css'
 import { Button } from '../Button/Button'
-import CAR from '../../assets/shipping.svg'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { CurrencyContext } from '../../contexts/CurrencyContext'
 import { CURRENCIES, CURRENCY_SIGN } from '../../constants/currencies'
+import CAR from '../../assets/shipping.svg'
 
 export function CartSummary({ cartProducts }) {
 	const [currency] = useContext(CurrencyContext)
-	console.log(cartProducts);
+
+	useEffect(() => {}, [cartProducts])
 
 	const shippingCosts = {
 		[CURRENCIES.USD]: 15,
 		[CURRENCIES.EUR]: 10,
 	}
-
 	const minSumsForFreeShipping = {
 		[CURRENCIES.USD]: 150,
 		[CURRENCIES.EUR]: 100,
 	}
-
 	const currencySign = CURRENCY_SIGN[currency]
 	const shippingCost = shippingCosts[currency]
 	const minSumForFreeShipping = minSumsForFreeShipping[currency]
 
 	let sum = 0
-
 	cartProducts.forEach(product => {
 		let price = currency === CURRENCIES.USD ? product.product.priceUSD : product.product.priceEUR
 		sum += price * product.quantity
 	})
-
-	const totalCost = sum > minSumForFreeShipping ? sum : sum + shippingCost
+	const totalCost = sum >= minSumForFreeShipping ? sum : sum + shippingCost
 
 	return (
 		<div className={styles.cartSummary}>
@@ -46,7 +43,7 @@ export function CartSummary({ cartProducts }) {
 				<div className={styles.cartInfoLine}>
 					<p>Shipping costs:</p>
 					<p>
-						{sum > minSumForFreeShipping ? '0' : shippingCost}
+						{sum >= minSumForFreeShipping ? '0' : shippingCost}
 						{currencySign}
 					</p>
 				</div>

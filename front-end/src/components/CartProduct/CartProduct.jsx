@@ -8,18 +8,19 @@ import { ENDPOINT_TO_PATH_MAPING_GENDER } from '../../constants/api'
 import { CurrencyContext } from '../../contexts/CurrencyContext'
 import { CURRENCIES, CURRENCY_SIGN } from '../../constants/currencies'
 import { editQuantity } from '../../api/editQuantity'
+import { CartContext } from '../../contexts/CartContext'
 
 export function CartProduct({ cartProduct }) {
 	const product = cartProduct.product
 	const [currency] = useContext(CurrencyContext)
 	const [quantity, setQuantity] = useState(cartProduct.quantity)
+	const [, setQty] = useContext(CartContext)
 
 	const price = <Price product={product} />
 	const { Form } = useFetcher()
 
 	const priceToCount = currency === CURRENCIES.EUR ? product.priceEUR : product.priceUSD
 	const totalPrice = priceToCount * quantity
-
 
 	return (
 		<tr className={styles.favouriteProduct}>
@@ -49,7 +50,8 @@ export function CartProduct({ cartProduct }) {
 					action='edit-item-quantity'
 					onChange={e => {
 						editQuantity(cartProduct, e.target.value)
-						setQuantity(e.target.value)
+						setQuantity((cartProduct.quantity = Number(e.target.value)))
+						setQty(prev => !prev)
 					}}
 				>
 					<input

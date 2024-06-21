@@ -19,6 +19,8 @@ import { addToCart } from './api/addToCart'
 import { cartLoader } from './api/cartLoader'
 import { deleteFromCart } from './api/deleteFromCart'
 import { newsAndBestsLoader } from './api/newsAndBestsLoader'
+import { About } from './views/About/About'
+import { Contact } from './views/Contact/Contact'
 
 const router = createBrowserRouter([
 	{
@@ -43,6 +45,19 @@ const router = createBrowserRouter([
 		loader: cartLoader,
 		children: [
 			{
+				path: '/',
+				element: <Home />,
+				loader: newsAndBestsLoader,
+			},
+			{
+				path: '/about-us',
+				element: <About />,
+			},
+			{
+				path:'contact',
+				element: <Contact/>
+			},
+			{
 				path: '/cart',
 				element: <Cart />,
 				loader: cartLoader,
@@ -51,11 +66,6 @@ const router = createBrowserRouter([
 				path: '/favourites',
 				element: <Favourites />,
 				loader: favouritesLoader,
-			},
-			{
-				path: '/:category?',
-				element: <Home />,
-				loader: newsAndBestsLoader,
 			},
 			{
 				path: '/:category/:gender?/:subcategory?',

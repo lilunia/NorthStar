@@ -8,7 +8,7 @@ export function FavouriteList({ favourites, currentCart }) {
 			<h3>Favourites</h3>
 			<div className={styles.favouriteList}>
 				<tr>
-					<th>Product</th>
+					<th className={styles.productName}>Product</th>
 					<th>Price</th>
 					<th>Size</th>
 					<th></th>

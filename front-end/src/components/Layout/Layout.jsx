@@ -14,7 +14,6 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import { Outlet, useLoaderData, useLocation } from 'react-router-dom'
 import { CurrencyContext } from '../../contexts/CurrencyContext'
 import { CURRENCIES } from '../../constants/currencies'
-// import { CartContext } from '../../contexts/CartContext'
 
 export function Layout() {
 	const location = useLocation()
@@ -35,7 +34,6 @@ export function Layout() {
 
 	return (
 		<>
-			{/* <CartContext.Provider value={[quantity, setQuantity]}> */}
 			<CurrencyContext.Provider value={[currency, setCurrency]}>
 				<MainContent>
 					<TopBar>
@@ -63,7 +61,6 @@ export function Layout() {
 				</MainContent>
 				<Footer />
 			</CurrencyContext.Provider>
-			{/* </CartContext.Provider> */}
 		</>
 	)
 }

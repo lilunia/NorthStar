@@ -1062,61 +1062,20 @@
   ],
   "favourites": [
     {
-      "productId": 17,
-      "id": 5
-    },
-    {
       "productId": 19,
       "id": 6
+    },
+    {
+      "productId": 1,
+      "id": 7
     }
   ],
   "cart": [
     {
       "productId": 17,
       "size": "S",
-      "quantity": 19,
-      "id": 5,
-      "product": {
-        "id": 17,
-        "gender": "women",
-        "category": "shop",
-        "subcategory": "shirts",
-        "productName": "Shirt zebra",
-        "brand": "Nature",
-        "priceEUR": 58,
-        "priceUSD": 50,
-        "photos": [
-          "http://localhost:3000/photos/shirts_woman_4a.jpg",
-          "http://localhost:3000/photos/shirts_woman_4b.jpg",
-          "http://localhost:3000/photos/shirts_woman_4c.jpg"
-        ],
-        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla facilis aperiam, magnam dolorum sit expedita nihil nostrum, voluptates temporibus voluptatum atque ullam molestiae provident dolore eligendi? Esse amet dolore illum.",
-        "maintenanceInfo": "Nemo et nam quasi in suscipit earum odit laborum repellat quo dolore rem, sequi eaque sapiente quibu",
-        "material": "90% linen, 10% viscose"
-      }
-    },
-    {
-      "productId": 14,
-      "size": "S",
       "quantity": 1,
-      "id": 6,
-      "product": {
-        "id": 14,
-        "gender": "women",
-        "category": "shop",
-        "subcategory": "shirts",
-        "productName": "T-shirt classic white",
-        "brand": "Basic",
-        "priceEUR": 28,
-        "priceUSD": 25,
-        "photos": [
-          "http://localhost:3000/photos/shirts_woman_1a.jpg",
-          "http://localhost:3000/photos/shirts_woman_1b.jpg"
-        ],
-        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla facilis aperiam, magnam dolorum sit expedita nihil nostrum, voluptates temporibus voluptatum atque ullam molestiae provident dolore eligendi? Esse amet dolore illum.",
-        "maintenanceInfo": "Nemo et nam quasi in suscipit earum odit laborum repellat quo dolore rem, sequi eaque sapiente quibu",
-        "material": "100% cotton"
-      }
+      "id": 1
     }
   ]
 }

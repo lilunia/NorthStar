@@ -1,0 +1,37 @@
+.contactHeader {
+	margin: 1em;
+	font-size: 1.5rem;
+	color: var(--color-theme-primary);
+	text-align: center;
+}
+.description,
+.place,
+.email {
+	margin-bottom: 3em;
+}
+.place,
+.email {
+	width: 100%;
+}
+.description p,
+.place p,
+.email p {
+	padding: 0 1em;
+}
+.detailsInfo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+@media (min-width: 992px) {
+	.detailsInfo {
+		align-items: start;
+		flex-direction: row;
+	}
+	.place,
+	.email {
+		width: 50%;
+	}
+}
