@@ -75,9 +75,34 @@
 .clear img:hover {
 	transform: scale(1.2);
 }
-.error{
+.error {
 	text-align: left;
 	color: rgb(100, 12, 12);
+}
+
+.popup {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+.popupInfo {
+	position: relative;
+	top: 20vh;
+	left: 20vw;
+	height: 25vh;
+	width: 50vw;
+	background-color: var(--color-grey);
+}
+.popupInfo p {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	font-size: 2rem;
 }
 @media (min-width: 576px) {
 	.sizeNumber {

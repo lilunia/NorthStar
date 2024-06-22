@@ -59,12 +59,12 @@ const router = createBrowserRouter([
 				element: <Contact />,
 			},
 			{
-				path: '/cart',
+				path: 'cart',
 				element: <Cart />,
 				loader: cartLoader,
 			},
 			{
-				path: '/favourites',
+				path: 'favourites',
 				element: <Favourites />,
 				loader: favouritesLoader,
 			},
