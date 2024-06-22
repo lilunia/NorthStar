@@ -7,6 +7,10 @@
 	gap: 1rem;
 }
 
-.pagination li {
+.pagination li a {
+	padding: 1em;
 	cursor: pointer;
+}
+.selected {
+	border-bottom: 0.125em solid var(--color-theme-primary);
 }

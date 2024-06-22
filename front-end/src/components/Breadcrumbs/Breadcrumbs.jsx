@@ -36,7 +36,10 @@ export function Breadcrumbs() {
 			{breadcrumbs.map(breadcrumb => {
 				return (
 					<li key={breadcrumb.path}>
-						<NavLink end to={breadcrumb.path}>
+						<NavLink
+							end
+							to={breadcrumb.path === '/shop' ? '/shop/woman' : breadcrumb.path}
+						>
 							{breadcrumb.categoryName}
 							<img src={ARROW} />
 						</NavLink>

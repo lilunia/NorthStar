@@ -11,7 +11,7 @@ export function Contact() {
 					width: '100%',
 					height: '20rem',
 					backgroundSize: 'cover',
-					backgroundPosition: 'center',
+					backgroundPosition: 'center -10rem',
 					backgroundAttachment: 'fixed',
 				}}
 			></div>

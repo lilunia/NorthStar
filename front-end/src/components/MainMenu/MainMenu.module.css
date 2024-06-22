@@ -17,6 +17,6 @@
 .mainMenu li a:hover {
 	color: var(--color-theme-primary);
 }
-.mainMenu a:global(.active) {
-	color: var(--color-text-primary);
+.mainMenu li a:global(.active) {
+	color: var(--color-theme-primary);
 }

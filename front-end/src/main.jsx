@@ -3,7 +3,6 @@ import './styles/globals.css'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-
 import { Layout } from './components/Layout/Layout'
 import { Cart } from './views/Cart/Cart'
 import { Favourites } from './views/Favourites/Favourites'
@@ -21,6 +20,7 @@ import { deleteFromCart } from './api/deleteFromCart'
 import { newsAndBestsLoader } from './api/newsAndBestsLoader'
 import { About } from './views/About/About'
 import { Contact } from './views/Contact/Contact'
+import { Error } from './components/Error/Error'
 
 const router = createBrowserRouter([
 	{
@@ -43,6 +43,7 @@ const router = createBrowserRouter([
 		path: '',
 		element: <Layout />,
 		loader: cartLoader,
+		errorElement: <Error />,
 		children: [
 			{
 				path: '/',
@@ -50,12 +51,12 @@ const router = createBrowserRouter([
 				loader: newsAndBestsLoader,
 			},
 			{
-				path: '/about-us',
+				path: 'about-us',
 				element: <About />,
 			},
 			{
-				path:'contact',
-				element: <Contact/>
+				path: 'contact',
+				element: <Contact />,
 			},
 			{
 				path: '/cart',

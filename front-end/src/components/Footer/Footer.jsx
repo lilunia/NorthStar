@@ -5,6 +5,10 @@ import img_visa from '../../icons/visa.jpg'
 import img_visaElectron from '../../icons/visaElectron.jpg'
 import ARROW from '../../assets/arrow.svg'
 import { CenteredContent } from '../CenteredContent/CenteredContent'
+import { NavLink } from 'react-router-dom'
+
+const footerInfo2 = ['Tracking', 'Order Status', 'Delivery', 'Shipping Info', 'FAQ']
+const footerInfo3 = ['Special Offers', 'Gift Cards', 'Advetising', 'Terms of Use']
 
 export function Footer() {
 	return (
@@ -13,25 +17,31 @@ export function Footer() {
 				<div className={styles.footerMainInfo}>
 					<div className={styles.footerColumn}>
 						<h5>Company info</h5>
-						<p>About Us</p>
-						<p>Latest Posts</p>
-						<p>Contact Us</p>
-						<p>Shop</p>
+						<NavLink to={'/about-us'}>About Us</NavLink>
+						<NavLink to={'/'}>Latest Posts</NavLink>
+						<NavLink to={'/contact'}>Contact Us</NavLink>
+						<NavLink to={'/shop/woman'}>Shop</NavLink>
 					</div>
 					<div className={styles.footerColumn}>
 						<h5>Help links</h5>
-						<p>Tracking</p>
-						<p>Order Status</p>
-						<p>Delivery</p>
-						<p>Shipping Info</p>
-						<p>FAQ</p>
+
+						{footerInfo2.map((info, index) => {
+							return (
+								<NavLink key={index} to={'/'}>
+									{info}
+								</NavLink>
+							)
+						})}
 					</div>
 					<div className={styles.footerColumn}>
 						<h5>Useful links</h5>
-						<p>Special Offers</p>
-						<p>Gift Cards</p>
-						<p>Advetising</p>
-						<p>Terms of Use</p>
+						{footerInfo3.map((info, index) => {
+							return (
+								<NavLink key={index} to={'/'}>
+									{info}
+								</NavLink>
+							)
+						})}
 					</div>
 					<div className={styles.footerColumn}>
 						<h5>Get in the know</h5>

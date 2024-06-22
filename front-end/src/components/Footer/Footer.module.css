@@ -20,6 +20,10 @@
 .footerColumn img {
 	cursor: pointer;
 }
+.footerColumn p,
+.footerPolicy p {
+	text-align: left;
+}
 .footerInput {
 	width: 90%;
 	padding-bottom: 0.5rem;
@@ -47,7 +51,7 @@ h5 {
 	margin: 2rem 0;
 	text-transform: uppercase;
 }
-p {
+a {
 	margin-bottom: 1rem;
 }
 hr {
