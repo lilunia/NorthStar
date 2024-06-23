@@ -10,9 +10,8 @@ import { editQuantity } from '../../api/editQuantity'
 export function ProductDetails({ product, currentCart, currentFavs }) {
 	const [selectedSize, setSelectedSize] = useState(null)
 	const [errorText, setErrorText] = useState('Please select a size')
+	const [addedText, setAddedText] = useState('')
 	const [isOnFavs, setIsOnFavs] = useState(false)
-	const [showPopup, setShowPopup] = useState(false)
-	const [popupText, setPopupText] = useState('')
 	const [quantity, setQuantity] = useState(1)
 	const { Form } = useFetcher()
 	const price = <Price product={product} />
@@ -30,12 +29,11 @@ export function ProductDetails({ product, currentCart, currentFavs }) {
 	]
 
 	const checkACart = (id, size) => {
-		setShowPopup(true)
-		setPopupText('Item added to cart!')
+		setAddedText('Item added to cart')
 		currentCart.map(cartItem => {
 			if (cartItem.productId === id && cartItem.size === size) {
 				setSelectedSize(null)
-				setQuantity(cartItem.quantity++)
+				setQuantity((cartItem.quantity = cartItem.quantity + 1))
 				editQuantity(cartItem, quantity)
 			}
 		})
@@ -44,11 +42,8 @@ export function ProductDetails({ product, currentCart, currentFavs }) {
 		currentFavs.map(favItem => {
 			if (favItem.productId === id) {
 				setIsOnFavs(true)
-				setShowPopup(false)
 			} else {
 				setIsOnFavs(false)
-				setShowPopup(true)
-				setPopupText('Item added to favourites list!')
 			}
 		})
 	}
@@ -67,6 +62,7 @@ export function ProductDetails({ product, currentCart, currentFavs }) {
 								<p
 									onClick={() => {
 										setSelectedSize(index)
+										setAddedText('')
 									}}
 									key={size}
 									className={`${styles.sizeNumber} ${
@@ -84,6 +80,7 @@ export function ProductDetails({ product, currentCart, currentFavs }) {
 							onClick={() => {
 								setSelectedSize(null)
 								setErrorText('Select a size')
+								setAddedText('')
 							}}
 						>
 							<img src={REFRESH_IMG} alt='' />
@@ -91,6 +88,7 @@ export function ProductDetails({ product, currentCart, currentFavs }) {
 					</div>
 
 					{selectedSize === null && <p className={styles.error}>{errorText}</p>}
+					{<p className={styles.added}>{addedText}</p>}
 				</div>
 				<div className={styles.buttons}>
 					<Form
@@ -121,18 +119,15 @@ export function ProductDetails({ product, currentCart, currentFavs }) {
 								: ''
 						}
 					>
-						<button disabled={isOnFavs} className={styles.heart}></button>
+						<button
+							disabled={isOnFavs}
+							className={styles.heart}
+							onClick={() => setAddedText('Item added to favourites list')}
+						></button>
 					</Form>
 				</div>
 				<ProductDescription infos={descriptionContent} />
 			</div>
-			{showPopup && (
-				<div className={styles.popup} onClick={() => setShowPopup(prev => !prev)}>
-					<div className={styles.popupInfo}>
-						<p>{popupText}</p>
-					</div>
-				</div>
-			)}
 		</>
 	)
 }

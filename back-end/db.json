@@ -1063,10 +1063,27 @@
   "favourites": [],
   "cart": [
     {
-      "productId": 24,
+      "productId": 14,
       "size": "S",
-      "quantity": 1,
-      "id": 2
+      "quantity": 4,
+      "id": 1,
+      "product": {
+        "id": 14,
+        "gender": "women",
+        "category": "shop",
+        "subcategory": "shirts",
+        "productName": "T-shirt classic white",
+        "brand": "Basic",
+        "priceEUR": 28,
+        "priceUSD": 25,
+        "photos": [
+          "http://localhost:3000/photos/shirts_woman_1a.jpg",
+          "http://localhost:3000/photos/shirts_woman_1b.jpg"
+        ],
+        "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla facilis aperiam, magnam dolorum sit expedita nihil nostrum, voluptates temporibus voluptatum atque ullam molestiae provident dolore eligendi? Esse amet dolore illum.",
+        "maintenanceInfo": "Nemo et nam quasi in suscipit earum odit laborum repellat quo dolore rem, sequi eaque sapiente quibu",
+        "material": "100% cotton"
+      }
     }
   ]
 }

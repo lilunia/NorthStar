@@ -49,8 +49,9 @@ export function CartProduct({ cartProduct }) {
 					method='PATCH'
 					action='edit-item-quantity'
 					onChange={e => {
-						editQuantity(cartProduct, e.target.value)
 						setQuantity((cartProduct.quantity = Number(e.target.value)))
+						editQuantity(cartProduct, e.target.value)
+						console.log(quantity)
 						setQty(prev => !prev)
 					}}
 				>

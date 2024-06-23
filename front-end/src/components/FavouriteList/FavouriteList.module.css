@@ -8,7 +8,7 @@
 .favouriteProducts {
 	width: 100%;
 }
-.productName{
+.productName {
 	width: 200%;
 }
 tr {
@@ -22,6 +22,17 @@ th {
 	width: 100%;
 	text-align: left;
 	border-bottom: 0.125em solid var(--color-dark-grey);
+}
+.emptyList {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 3em;
+}
+.emptyList p {
+	margin-bottom: 2em;
+	font-size: 1.5rem;
 }
 @media (min-width: 768px) {
 	.favouriteList tr {

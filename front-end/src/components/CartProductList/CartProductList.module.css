@@ -1,5 +1,5 @@
 .favouriteList {
-	margin: 5rem 1rem;
+	margin: 5em 1em;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -8,7 +8,7 @@
 .favouriteProducts {
 	width: 100%;
 }
-.productName{
+.productName {
 	width: 200%;
 }
 tr {
@@ -17,12 +17,25 @@ tr {
 }
 
 th {
-	padding: 1rem;
+	padding: 1em;
 	height: 3.5rem;
 	width: 100%;
 	text-align: left;
 	border-bottom: 0.125em solid var(--color-dark-grey);
 }
+
+.emptyCart {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 3em;
+}
+.emptyCart p {
+	margin-bottom: 2em;
+	font-size: 1.5rem;
+}
+
 @media (min-width: 768px) {
 	.favouriteList tr {
 		width: 100%;

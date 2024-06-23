@@ -75,9 +75,13 @@
 .clear img:hover {
 	transform: scale(1.2);
 }
-.error {
+.error,
+.added {
 	text-align: left;
 	color: rgb(100, 12, 12);
+}
+.added {
+	color: var(--color-theme-primary);
 }
 
 .popup {
@@ -90,11 +94,13 @@
 }
 .popupInfo {
 	position: relative;
-	top: 20vh;
-	left: 20vw;
-	height: 25vh;
-	width: 50vw;
+	top: 65%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 10rem;
+	width: 18rem;
 	background-color: var(--color-grey);
+	box-shadow: 0.125em 0.125em 0.125em var(--color-dark-grey);
 }
 .popupInfo p {
 	display: flex;
@@ -102,7 +108,7 @@
 	align-items: center;
 	width: 100%;
 	height: 100%;
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 @media (min-width: 576px) {
 	.sizeNumber {
@@ -114,11 +120,25 @@
 		padding: 2rem;
 	}
 }
+
+@media (min-width: 768px) {
+	.popupInfo {
+		top: 70%;
+		width: 30rem;
+		height: 15rem;
+	}
+	.popupInfo p {
+		font-size: 2rem;
+	}
+}
 @media (min-width: 992px) {
 	.details {
 		padding-top: 0;
 	}
 	.productName {
 		margin-top: 0;
+	}
+	.popupInfo {
+		top: 40%;
 	}
 }
