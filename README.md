@@ -1,6 +1,23 @@
 # NorthStar - E-commerce website
 
-This shop was created with Vite+React.
+This shop was created using Vite + React.js + React Router. This project is a functional e-commerce application that allows users to browse products, add them to the shopping cart and add them to the favourites list. The website also includes contact and about pages.
+
+<p align="center">
+<img src="./front-end/src/assets/home.PNG"width= "70%" height= "70%" alt="Main app screenshot">
+</p>
+
+## Table of contents
+
+- [Features](#Features)
+- [Technologies](#technologies)
+- [Screenshots](#screenshots)
+
+## Features
+
+- Product browsing: on the home page, users can discover recently added items and top sellers, and on the shop page, users can see all available products and filter them by category.
+- Product details: each product has its own detail page. On this page you can find out more details about the product and add it to your Favourites or, after selecting the size, to your shopping basket.
+- Favourites List: liked items can be added to the Favourites list and later added directly to the shopping basket.
+- Shopping Cart: allows you to add and remove items from the shopping cart, change quantities.
 
 ## Technologies
 
@@ -9,9 +26,7 @@ This shop was created with Vite+React.
 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS?retiredLocale=pl"><img src="./front-end/src/icons/css3_icon.svg" style="width:32px; height:32px;" alt="Css icon"></a>
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="./front-end/src/icons/js_icon.svg" style="width:32px; height:32px;" alt="JS icon"></a>
 
-## About the project
-
-## Screenshot
+## Screenshots
 
 ### Home Page
 
@@ -31,13 +46,13 @@ This shop was created with Vite+React.
   <img src="./front-end/src/assets/productDetails.PNG"width= "70%" height= "70%" alt="Main app screenshot">
   </p>
 
-### Favourites
+### Favourites List
 
 <p align="center">
   <img src="./front-end/src/assets/fav.PNG"width= "70%" height= "70%" alt="Main app screenshot">
   </p>
 
-### Favourites
+### Cart
 
 <p align="center">
   <img src="./front-end/src/assets/cart.PNG"width= "70%" height= "70%" alt="Main app screenshot">
@@ -56,3 +71,5 @@ npm install
 npm run dev
 
 ```
+
+The app will be available at http://localhost:3000.

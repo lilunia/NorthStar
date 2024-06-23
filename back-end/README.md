@@ -1,117 +1,97 @@
-Ten folder zawiera prosty serwer, dzięki któremu będziemy mogli odczytać listę folderów oraz notatek. Umożliwia on też tworzenie nowych folderów i notatek oraz edycje już isniejących notatek.
+This folder contains a simple server so that we can read the product list.
 
-Żeby uruchomić server wywołaj w terminalu na poziomie folderu `back-end` komendy:
+To start the server call the commands in the terminal at the `back-end` folder level:
 
 ```command
 npm i
 npm run dev
 ```
 
-Możesz również wywołać te same komendy folder wyżej - wtedy uruchomisz jednocześnie server i projekt frontendowy.
+You can also call the same commands from the folder above - in which case you will start the server and the frontend project at the same time.
 
-### Model danych
+### Data model
 
-#### Produkty
+#### Products
 
-Elementy zwracane i zapisywane do serwera mają następujące pola:
-
-```json
-{
-    "id": 1,
-    "gender": "men",
-    "category": "odziez",
-    "subcategory": "koszulki",
-    "productName": "T-Shirt",
-    "brand": "Top Brand",
-    "pricePLN": 49,
-    "priceUSD": 10,
-    "photos": [
-        "http://localhost:3000/product-photos/man-t-shirt-1.jpg",
-        "http://localhost:3000/product-photos/man-t-shirt-4.jpg",
-        "http://localhost:3000/product-photos/man-t-shirt-3.jpg"
-    ],
-    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla facilis aperiam, magnam dolorum sit expedita nihil nostrum, voluptates temporibus voluptatum atque ullam molestiae provident dolore eligendi? Esse amet dolore illum.",
-    "maintenanceInfo": "Nemo et nam quasi in suscipit earum odit laborum repellat quo dolore rem, sequi eaque sapiente quibu"
-},
-```
-
-#### Produkty ulubione
-
-Elementy zwracane i zapisywane do serwera mają następujące pola:
+The products returned and written to the server have the following fields:
 
 ```json
 {
-    "productId": 1
+	"id": 1,
+	"gender": "men",
+	"category": "shop",
+	"subcategory": "shirts",
+	"productName": "Shirt lemons",
+	"brand": "Sunshine",
+	"priceEUR": 49,
+	"priceUSD": 59,
+	"photos": [
+		"http://localhost:3000/photos/shirts_man_1a.jpg",
+		"http://localhost:3000/photos/shirts_man_1b.jpg",
+		"http://localhost:3000/photos/shirts_man_1c.jpg"
+	],
+	"description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla facilis aperiam, magnam dolorum sit expedita nihil nostrum, voluptates temporibus voluptatum atque ullam molestiae provident dolore eligendi? Esse amet dolore illum.",
+	"maintenanceInfo": "Nemo et nam quasi in suscipit earum odit laborum repellat quo dolore rem, sequi eaque sapiente quibu",
+	"material": "100% linen"
 }
 ```
 
-### Opis endpointów
+### Description of endpoints
 
-| Ścieżka               | Metoda | Jak działa?                                                                                    |
-| --------------------- | ------ | ---------------------------------------------------------------------------------------------- |
-| /products             | `GET`  | Wszystkie produkty                                                                             |
-| /women/bestsellers    | `GET`  | Pobiera bestsellery z kategorii "Kobieta"                                                      |
-| /men/bestsellers      | `GET`  | Pobiera bestsellery z kategorii "Mężczyzna"                                                    |
-| /products             | `GET`  | Pobiera wszystkie produkty.                                                                    |
-| /favourites           | `GET`  | Pobiera wszystkie produkty dodane do listy ulubionych                                          |
-| /favourites           | `POST` | Dodaje produkt do listy ulubionych. Wymagania przesłania body z ID produktu np: {productId: 1} |
+| Path           | Metod    | How does it work?                                                                                                                    |
+| -------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| /products      | `GET`    | All products                                                                                                                         |
+| /bestsellers   | `GET`    | Retrieves bestsellers for woman and man                                                                                              |
+| /news          | `GET`    | Retrieves recently added products                                                                                                    |
+| /favourites    | `GET`    | Retrieves all products added to the favourites list                                                                                  |
+| /favourites    | `POST`   | Adds a product to a favourites list. Requirements for uploading a body with the product ID e.g: {productId: 1}                       |
+| /favourites/id | `DELETE` | Remove a product from favourites list.                                                                                               |
+| /cart          | `GET`    | Retrieves all products added to the shopping cart                                                                                    |
+| /cart          | `POST`   | Adds a product to a shopping cart. Requirements for uploading a body with the product ID e.g: {productId: 1, size: 'S', quantity: 1} |
+| /cart/id       | `DELETE` | Remove a product from shopping cart.                                                                                                 |
 
-### Przykłady użycia
+### Examples of use
 
 <details>
  <summary> [GET] - <i>/products</i>  </summary>
 <br>
-Wywołanie:
+Calling:
 
 ```js
-fetch('http://localhost:3000/products`)
-    .then(res => res.json())
-    .console.log(res => res.json());
+fetch('http://localhost:3000/cart')
+	.then(res => res.json())
+	.then(products => {
+		console.log(products)
+	})
 ```
 
-Konsola:
+Console:
 
 ```js
-[
-    {
-        id: 1,
-        gender: "men",
-        category: "odziez",
-        subcategory: "koszulki",
-        productName: "T-Shirt",
-        brand: "Top Brand",
-        pricePLN: 49,
-        priceUSD: 10,
-        photos: [
-            "http://localhost:3000/product-photos/man-t-shirt-1.jpg",
-            "http://localhost:3000/product-photos/man-t-shirt-4.jpg",
-            "http://localhost:3000/product-photos/man-t-shirt-3.jpg",
-        ],
-        description:
-            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla facilis aperiam, magnam dolorum sit expedita nihil nostrum, voluptates temporibus voluptatum atque ullam molestiae provident dolore eligendi? Esse amet dolore illum.",
-        maintenanceInfo:
-            "Nemo et nam quasi in suscipit earum odit laborum repellat quo dolore rem, sequi eaque sapiente quibu",
-    },
-    {
-        id: 2,
-        gender: "men",
-        category: "odziez",
-        subcategory: "koszulki",
-        productName: "T-Shirt",
-        brand: "Top Brand",
-        pricePLN: 49,
-        priceUSD: 10,
-        photos: [
-            "http://localhost:3000/product-photos/man-t-shirt-1.jpg",
-            "http://localhost:3000/product-photos/man-t-shirt-4.jpg",
-            "http://localhost:3000/product-photos/man-t-shirt-3.jpg",
-        ],
-        description:
-            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla facilis aperiam, magnam dolorum sit expedita nihil nostrum, voluptates temporibus voluptatum atque ullam molestiae provident dolore eligendi? Esse amet dolore illum.",
-        maintenanceInfo:
-            "Nemo et nam quasi in suscipit earum odit laborum repellat quo dolore rem, sequi eaque sapiente quibu",
-    },
-];
+;[
+	{
+		productId: 14,
+		size: 'S',
+		quantity: 2,
+		id: 1,
+		product: {
+			id: 14,
+			gender: 'women',
+			category: 'shop',
+			subcategory: 'shirts',
+			productName: 'T-shirt classic white',
+			brand: 'Basic',
+			priceEUR: 28,
+			priceUSD: 25,
+			photos: [Array],
+			description:
+				'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla facilis aperiam, magnam dolorum sit expedita nihil nostrum, voluptates temporibus voluptatum atque ullam molestiae provident dolore eligendi? Esse amet dolore illum.',
+			maintenanceInfo:
+				'Nemo et nam quasi in suscipit earum odit laborum repellat quo dolore rem, sequi eaque sapiente quibu',
+			material: '100% cotton',
+		},
+	},
+]
 ```
 
 </details>

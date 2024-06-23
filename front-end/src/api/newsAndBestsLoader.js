@@ -1,6 +1,7 @@
 import { BACK_END_URL } from '../constants/api'
 
 export async function newsAndBestsLoader() {
+
 	const bestsellersUrl = fetch(`${BACK_END_URL}/bestsellers`)
 	const newsUrl = fetch(`${BACK_END_URL}/news`)
 
@@ -9,4 +10,6 @@ export async function newsAndBestsLoader() {
 		.then(products => {
 			return products
 		})
+
+		
 }

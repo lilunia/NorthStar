@@ -2,7 +2,6 @@ import styles from './Products.module.css'
 import { CenteredContent } from '../CenteredContent/CenteredContent'
 import { Product } from '../Product/Product'
 
-
 export function Products({ products, headerText, textInfo }) {
 	return (
 		<CenteredContent>

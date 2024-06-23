@@ -1060,12 +1060,21 @@
       "material": "98% cotton 2% elastane"
     }
   ],
-  "favourites": [],
+  "favourites": [
+    {
+      "productId": 24,
+      "id": 1
+    },
+    {
+      "productId": 18,
+      "id": 2
+    }
+  ],
   "cart": [
     {
       "productId": 14,
       "size": "S",
-      "quantity": 4,
+      "quantity": 2,
       "id": 1,
       "product": {
         "id": 14,
