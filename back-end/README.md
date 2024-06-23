@@ -48,6 +48,7 @@ The products returned and written to the server have the following fields:
 | /favourites/id | `DELETE` | Remove a product from favourites list.                                                                                               |
 | /cart          | `GET`    | Retrieves all products added to the shopping cart                                                                                    |
 | /cart          | `POST`   | Adds a product to a shopping cart. Requirements for uploading a body with the product ID e.g: {productId: 1, size: 'S', quantity: 1} |
+| /cart/id       | `PATCH`  | Change the quantity                                                                                                                  |
 | /cart/id       | `DELETE` | Remove a product from shopping cart.                                                                                                 |
 
 ### Examples of use

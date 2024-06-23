@@ -1,6 +1,6 @@
 # NorthStar - E-commerce website
 
-This shop was created using Vite + React.js + React Router. This project is a functional e-commerce application that allows users to browse products, add them to the shopping cart and add them to the favourites list. The website also includes contact and about pages.
+This shop was created using **Vite + React.js + React Router**. This project is a functional e-commerce application that allows users to browse products, add them to the shopping cart and to the favourites list. The website also includes contact and about pages.
 
 <p align="center">
 <img src="./front-end/src/assets/home.PNG"width= "70%" height= "70%" alt="Main app screenshot">
@@ -14,10 +14,10 @@ This shop was created using Vite + React.js + React Router. This project is a fu
 
 ## Features
 
-- Product browsing: on the home page, users can discover recently added items and top sellers, and on the shop page, users can see all available products and filter them by category.
-- Product details: each product has its own detail page. On this page you can find out more details about the product and add it to your Favourites or, after selecting the size, to your shopping basket.
-- Favourites List: liked items can be added to the Favourites list and later added directly to the shopping basket.
-- Shopping Cart: allows you to add and remove items from the shopping cart, change quantities.
+- **Product browsing**: on the home page, users can discover recently added items and top sellers, and on the shop page, users can see all available products and filter them by category.
+- **Product details**: each product has its own detail page. On this page you can find out more details about the product and add it to your Favourites or, after selecting the size, to your shopping basket.
+- **Favourites List**: liked items can be added to the Favourites list and later added directly to the shopping basket.
+- **Shopping Cart**: allows you to add and remove items from the shopping cart, change quantities.
 
 ## Technologies
 
