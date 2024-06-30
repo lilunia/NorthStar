@@ -3,9 +3,7 @@
 This shop was created using **Vite + React.js + React Router**. This project is a functional e-commerce application that allows users to browse products, add them to the shopping cart and to the favourites list. The website also includes contact and about pages.
 
 <p align="center">
-<img src="./front-end/src/assets/home1.PNG"width= "70%" height= "70%" alt="Main app screenshot">
-<img src="./front-end/src/assets/home2.PNG"width= "70%" height= "70%" alt="Main app screenshot">
-<img src="./front-end/src/assets/home3.PNG"width= "70%" height= "70%" alt="Main app screenshot">
+<img src="./front-end/src/assets/home.PNG"width= "70%" height= "70%" alt="Main app screenshot">
 </p>
 
 ## Table of contents
@@ -74,6 +72,6 @@ npm run dev
 
 ```
 
-Product information is retrived from the back end, available at http://localhost:3000/products. Please refer to <a href='../NorthStar/back-end/README.md'>back-end README.md</a> for more details. 
+Product information is retrived from the back end, available at http://localhost:3000/products. Please refer to back-end README.md for more details. 
 
 Layout inspired by Figma <a href="https://www.figma.com/design/DToh932tSxXN3zoRM7oZLU/eCommerce-Fashion-Website-(Community)?node-id=0-1&m=dev">NorthStar - eCommerce Fashion Website</a>
