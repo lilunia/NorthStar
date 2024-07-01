@@ -62,14 +62,14 @@ This shop was created using **Vite + React.js + React Router**. This project is 
 ### About us
 
 <p align="center">
-  <img src="./front-end/src/assets/about.PNG"width= "70%" height= "70%" alt="About us screenshot">
+  <img src="./front-end/src/assets/about.png"width= "70%" height= "70%" alt="About us screenshot">
 </p>
 
 ### Contact
 
 <p align="center">
-  <img src="./front-end/src/assets/contact1.PNG"width= "70%" height= "70%" alt="Contact screenshot">
-  <img src="./front-end/src/assets/contact2.PNG"width= "70%" height= "70%" alt="Contact screenshot - message sent">
+  <img src="./front-end/src/assets/contact1.png"width= "70%" height= "70%" alt="Contact screenshot">
+  <img src="./front-end/src/assets/contact2.png"width= "70%" height= "70%" alt="Contact screenshot - message sent">
 </p>
 
 
