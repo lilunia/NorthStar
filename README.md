@@ -11,6 +11,8 @@ This shop was created using **Vite + React.js + React Router**. This project is 
 - [Features](#Features)
 - [Technologies](#technologies)
 - [Screenshots](#screenshots)
+- [Installation](#installation)
+- [Live on Vercel](##live-on-vercel)
 
 ## Features
 
@@ -72,7 +74,6 @@ This shop was created using **Vite + React.js + React Router**. This project is 
   <img src="./front-end/src/assets/contact2.png"width= "70%" height= "70%" alt="Contact screenshot - message sent">
 </p>
 
-
 ## Installation
 
 To run this project, you must have the following dependencies installed:
@@ -90,3 +91,13 @@ npm run dev
 Product information is retrived from the back end, available at http://localhost:3000/products. Please refer to back-end README.md for more details.
 
 Layout inspired by Figma <a href="https://www.figma.com/design/DToh932tSxXN3zoRM7oZLU/eCommerce-Fashion-Website-(Community)?node-id=0-1&m=dev">NorthStar - eCommerce Fashion Website</a>
+
+## Live on Vercel
+
+- front-end
+  <a href="https://northstar-front.vercel.app/">NorthStar - eCommerce Fashion Website</a>
+
+- back-end
+  <a href="https://northstar-back-end.vercel.app/">NorthStar - back-end</a>
+
+Please go to <a href="https://github.com/lilunia/NorthStar-vercel">https://github.com/lilunia/NorthStar-vercel</a> for more details.
