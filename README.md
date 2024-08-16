@@ -12,7 +12,7 @@ This shop was created using **Vite + React.js + React Router**. This project is 
 - [Technologies](#technologies)
 - [Screenshots](#screenshots)
 - [Installation](#installation)
-- [Live on Vercel](##live-on-vercel)
+- [Live on Vercel](#live-on-vercel)
 
 ## Features
 
